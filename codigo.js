@@ -1,31 +1,33 @@
-$('#puzzle-start, #play_button').click(function(){
-  $('#main-puzzle-box').show(function(){
-    $(this).click().animate({
-      "width":"100%",
-      "display":"block"
-    },'fast');
+$(document).ready(function(){
+  $('#puzzle-start, #play_button').click(function(){
+    $('#main-puzzle-box').show(function(){
+      $(this).click().animate({
+        "width":"100%",
+        "display":"block"
+      },'fast');
+    });
   });
-});
 
-$('#puzzle-start').hover(function(){
-  $('#main-puzzle-box').show(function(){
-    $(this).click().animate({
-      "width":"100%",
-      "display":"block"
-    },'fast');
+  $('#puzzle-start').hover(function(){
+    $('#main-puzzle-box').show(function(){
+      $(this).click().animate({
+        "width":"100%",
+        "display":"block"
+      },'fast');
+    });
   });
-});
 
-$('#main-header').mouseenter(function(){
-  $('#main-header').animate({
-    "opacity":".8"
+  $('#main-header').mouseenter(function(){
+    $('#main-header').animate({
+      "opacity":".8"
+    });
   });
-});
 
-$('#main-puzzle-box').dblclick(function(){
-  $('#main-puzzle-box').hide(function(){
-    $(this).fadeOut()
+  $('#main-puzzle-box').dblclick(function(){
+    $('#main-puzzle-box').hide(function(){
+      $(this).fadeOut()
+    });
   });
-});
 
-$('img').draggable();
+  $('.puzzle-set').sortable();
+});
