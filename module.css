@@ -38,7 +38,6 @@
   font-size: 6.5em;
   color: black;
   margin-top: -0.3em;
-  outline: none;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
 /*  display: none;*//*Home page main block*/
 }
@@ -71,7 +70,7 @@
   transition:.5s;
 /*  display: none;*//*Home page main block*/
 }
-
+/*footer contact us*/
 #f-contact{
   font-size: 1.0em;
   text-align: center;
