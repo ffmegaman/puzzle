@@ -89,3 +89,7 @@
   height: 30em;
   background-color: white;
 }
+
+.puzzle-set > li{
+  display: inline;
+}
