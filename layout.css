@@ -10,7 +10,7 @@
   color: white;
   float: left;
   font-family: 'Playfair Display', serif;
-  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+/*  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);*/
 }
 
 #main_logo:hover{
@@ -24,17 +24,14 @@
   transition:.5s;
 }
 
-#main-container{/*1020 px*/
-
-}
-
 /*Home page main block*/
 #play-wrapper{/*700px*/
-  width: 68.627451%;
+  width: 90.627451%;
   height: 20.1em;
   display: block;
   margin: 0 auto;
   margin-top: 12em;
+  border:1px solid red;
 /*  display: none;*/
 /*Home page main block*/
 }

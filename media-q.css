@@ -4,26 +4,11 @@
 
 @media (max-width: 800px){
 
-#play-wrapper{/*700px*/
-  width: 48.627451%;
-  height: 20.1em;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10em;
-}
-
 
 }
 
 @media (max-width: 600px){
 
-#play-wrapper{/*700px*/
-  width: 28.627451%;
-  height: 20.1em;
-  display: block;
-  margin: 0 auto;
-  margin-top: 10em;
-}
 
 }
 
