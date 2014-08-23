@@ -17,12 +17,12 @@ $(document).ready(function(){
         window.setTimeout(function(){
           timeObject.currentTime += 1;
           console.log(timeObject.currentTime)
-          runTime(gameRecord);
+          timeObject.runTime(gameRecord);
         }, 1000);
       }
       else{
         gameRecord.totalTime = timeObject.currentTime;
-        timeObject.currentTime = 0;
+        this.currentTime = 0;
       }
     }
   }
