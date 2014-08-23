@@ -1,28 +1,29 @@
 $(document).ready(function(){
 
-  function GameRecord () {
+  // Upon new game, instantiate a new GameRecord.
+  // Start timer with timeObject.runTime(<instance variable of GameRecord>)
+  // For example, if you used: var game = new GameRecord;
+  // Start timer like this: timeObject.runTime(game);
+  // Stop timer with timeObject.stopTime = true;
+  function GameRecord() {
     this.totalTime = 0;
   }
 
   var timeObject = {
     stopTime: false,
-    currentTime: 0
-  }
-
-  function incrementTime() {
-    timeObject['currentTime'] += 1;
-    console.log(timeObject.currentTime)
-    runTime();
-  }
-
-  function runTime(){
-    if(timeObject.stopTime === false){
-      window.setTimeout(incrementTime, 1000);
-    }
-    else{
-      updateRecord();
-      timeObject.currentTime = 0;
+    currentTime: 0,
+    runTime: function(gameRecord){
+      if(timeObject.stopTime === false){
+        window.setTimeout(function(){
+          timeObject.currentTime += 1;
+          console.log(timeObject.currentTime)
+          runTime(gameRecord);
+        }, 1000);
+      }
+      else{
+        gameRecord.totalTime = timeObject.currentTime;
+        timeObject.currentTime = 0;
+      }
     }
   }
-
 });
