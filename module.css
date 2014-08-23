@@ -2,12 +2,16 @@
   font-size: 1.5em;
   color: white;
   display: inline-block;
-  float: right;
   margin-left: 1em;
   margin-top: 1.2em;
   margin-right: 0.6em;
   font-family: 'Playfair Display', serif;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+}
+
+.menu-set{
+  float: right;
+  padding-right: 2.1em;
 }
 
 .el-menu:hover{
@@ -35,15 +39,15 @@
 .puzzle_nerds{
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 6.5em;
+  font-size: 5em;
   color: black;
-  margin-top: -0.3em;
+/*  margin-top: -0.3em;*/
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
 /*  display: none;*//*Home page main block*/
 }
 
 #play_button{
-  width: 29.411765%;
+  width: 15.411765%;
   height: 3em;
   margin-top: 1.5em;
   display: block;
@@ -85,8 +89,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 98.0392156862745%;
-  height: 30em;
-  background-color: white;
+/*  width: 1200px;*/
+  width: 90%;
+/*  height: 610px;*/
+  padding-left: 9.4em;
 }
 
 .puzzle-set > li{

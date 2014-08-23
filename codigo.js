@@ -2,32 +2,32 @@ $(document).ready(function(){
   $('#puzzle-start, #play_button').click(function(){
     $('#main-puzzle-box').show(function(){
       $(this).click().animate({
-        "width":"100%",
-        "display":"block"
+       "width":"100%",
+       "display":"block"
       },'fast');
     });
   });
 
-  $('#puzzle-start').hover(function(){
-    $('#main-puzzle-box').show(function(){
+    $('#click-about').click(function(){
+    $('#main-about-box').show(function(){
       $(this).click().animate({
-        "width":"100%",
-        "display":"block"
-      },'fast');
+      "height":"31.9em",
+      "display":"block",
+      "z-index":"1000"
+      },'slow');
     });
   });
 
-  $('#main-header').mouseenter(function(){
-    $('#main-header').animate({
-      "opacity":".8"
-    });
+  $('#main-about-box').mouseleave(function(){
+    $(this).fadeOut(1300);
   });
 
   $('#main-puzzle-box').dblclick(function(){
-    $('#main-puzzle-box').hide(function(){
-      $(this).fadeOut()
+    $('#main-puzzle-box').fadeOut(function(){
+      $(this).fadeOut(2000);
     });
   });
 
   $('.puzzle-set').sortable();
 });
+

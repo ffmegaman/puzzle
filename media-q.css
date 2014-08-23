@@ -1,16 +1,63 @@
-@media (max-width: 1020px){
-
-}
-
-@media (max-width: 800px){
-
-
-}
-
-@media (max-width: 600px){
+/*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
+@media (max-width: 1020px){  /*DESKTOP*/
+  .puzzle_nerds{
+    font-size: 5em;
+  }
 
 
 }
+/*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
+
+
+/*TABLET*//*TABLET*//*TABLET*//*TABLET*/
+@media (max-width: 800px){  /*TABLET*/
+  .puzzle_nerds{
+    font-size: 4.5em;
+  }
+
+  #main-header{
+    height: 8.5em;
+  }
+
+  #main_logo{
+    font-size: 3em;
+  }
+
+
+}
+/*TABLET*//*TABLET*//*TABLET*//*TABLET*/
+
+
+
+/*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
+@media (max-width: 600px){  /*MOBILE*/
+  #main_logo{
+    font-size: 3em;
+  }
+
+  #main-header{
+    height: 7.5em;
+  }
+
+  .puzzle_nerds{
+    font-size: 3em;
+  }
+
+  .el-menu{
+    font-size: 1em;
+  }
+
+  .el-menu:hover{
+    font-size: 1em;
+  }
+
+  #play_button{
+    width: 21.411765%;
+
+  }
+
+}
+/*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
 
 
