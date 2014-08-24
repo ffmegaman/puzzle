@@ -21,9 +21,12 @@
   }
 
   #main_logo{
-    font-size: 3em;
+    font-size: 3.5em;
   }
 
+  #puzzle_level1{
+    padding-left: 4.2em;
+  }
 
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
@@ -55,6 +58,10 @@
   #play_button{
     width: 21.411765%;
 
+  }
+
+  #puzzle_level1{
+    padding-left: 1.5em;
   }
 
 }
