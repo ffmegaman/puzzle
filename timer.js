@@ -11,18 +11,28 @@ $(document).ready(function(){
 
   var timeObject = {
     stopTime: false,
-    currentTime: 0,
+    currentSeconds: 0,
+    currentTime: function(){
+      var mins = Math.floor(this.currentSeconds / 60);
+      var seconds = this.currentSeconds % 60;
+      if (seconds < 10) {
+        return mins + ":" + "0" + seconds;
+      }
+      else {
+        return mins + ":" + seconds;
+      }
+    },
     runTime: function(gameRecord){
       if(timeObject.stopTime === false){
         window.setTimeout(function(){
-          timeObject.currentTime += 1;
-          console.log(timeObject.currentTime)
+          timeObject.currentSeconds += 1;
+          console.log(timeObject.currentTime())
           timeObject.runTime(gameRecord);
         }, 1000);
       }
       else{
-        gameRecord.totalTime = timeObject.currentTime;
-        this.currentTime = 0;
+        gameRecord.totalTime = timeObject.currentTime();
+        this.currentSeconds = 0;
       }
     }
   }
