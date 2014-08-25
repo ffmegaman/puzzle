@@ -1,5 +1,5 @@
 body {
-  background: url(../img/bg1.jpg) no-repeat center center fixed;
+  background: url(../img/pics.gif) no-repeat center center fixed;
   -webkit-background-size:cover;
   -moz- background-size:cover;
   -o- background-
@@ -53,15 +53,39 @@ a:active {
   /*Level 1 puzzle li*/
 #puzzle_level1{
   max-width: 98.0392156862745%;
-  width: 100%;
+  width: 90%;
   padding-left: 8em;
+}
+
+.puzzle-set{
+/*  list-style-type: none;*/
 }
 
 .puzzle-set > li{
   display: inline;
+  float: left;
 }
 
 .puzzle-set > li > img{
-  width: 20%;
-  height: 20%;
+  width: 100%;
+  height: 100%;
+/*  width: 18%;*/
+  opacity: 1;
+  margin-top: -5px;
+/*  border:none;*/
 }
+
+
+.puzzle-set > li > img:hover{
+  opacity: 1;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+/*li{
+  display: list-item;
+}
+*/

@@ -45,6 +45,14 @@
   transition:.5s;
 /*  display: none;*//*Home page main block*/
 }
+
+.puzzle_fadeout{/*Back to HomePage from puzzle box*/
+  color: white;
+  float: right;
+  clear: right;
+  margin-top: 2.5em;
+}
+
 /*footer contact us*/
 #footer_contact{
   font-size: 1.0em;
