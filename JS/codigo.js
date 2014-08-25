@@ -22,12 +22,14 @@ $(document).ready(function(){
     $(this).fadeOut(1300);
   });
 
-  $('#main-puzzle-box').dblclick(function(){
-    $('#main-puzzle-box').fadeOut(function(){
-      $(this).fadeOut(2000);
-    });
+
+  $('#back-button').on('click', function(){
+    $('#main-puzzle-box').fadeOut('slow');
   });
 
-  $('.puzzle-set').sortable();
+  $('.puzzle-set-1').sortable();
+  $('.puzzle-set-2').sortable();
+
+
 });
 
