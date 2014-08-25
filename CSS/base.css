@@ -55,16 +55,41 @@ a:active {
   max-width: 98.0392156862745%;
   width: 90%;
   padding-left: 8em;
+  display: none;
+}
+
+#puzzle_level2{
+  max-width: 98.0392156862745%;
+  width: 68%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 6.5em;
+  /*LEVEL2*/
 }
 
 .puzzle-set{
 /*  list-style-type: none;*/
 }
 
-.puzzle-set > li{
-  display: inline;
-  float: left;
+.puzzle-set-2{
+/*  list-style-type: none;*/
+/*LEVEL2*/
 }
+
+.puzzle-set > li{
+  display: inline-block;
+  float: left;
+  width: 18%;
+}
+
+.puzzle-set-2 > li{
+  display: inline-block;
+  float: left;
+  width: 18%;
+  /*LEVEL2*/
+}
+
 
 .puzzle-set > li > img{
   width: 100%;
@@ -72,9 +97,18 @@ a:active {
 /*  width: 18%;*/
   opacity: 1;
   margin-top: -5px;
-/*  border:none;*/
+  border:none;
 }
 
+.puzzle-set-2 > li > img{
+  width: 100%;
+  height: 100%;
+  margin-top: -5px;
+/*  width: 18%;
+  opacity: 1;
+/*  border:none;*/
+/*LEVEL2*/
+}
 
 .puzzle-set > li > img:hover{
   opacity: 1;
@@ -83,6 +117,16 @@ a:active {
   -ms-transition:.5s;
   -o-transition:.5s;
   transition:.5s;
+}
+
+.puzzle-set-2 > li > img:hover{
+  opacity: 1;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+  /*LEVEL2*/
 }
 
 /*li{

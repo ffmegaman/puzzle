@@ -29,6 +29,7 @@ $(document).ready(function(){
   });
 
   $('.puzzle-set').sortable();
+  $('.puzzle-set-2').sortable();
 
 
 });

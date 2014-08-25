@@ -28,6 +28,10 @@
     padding-left: 4.2em;
   }
 
+  #puzzle_level2{
+    padding-left: 4.5em;
+}
+
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
 
@@ -63,6 +67,10 @@
   #puzzle_level1{
     padding-left: 1.5em;
   }
+
+  #puzzle_level2{
+    padding-left: 0.8em;
+}
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
