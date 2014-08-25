@@ -40,7 +40,7 @@ var canvas;  //reference the our canvas */
 var stage;
 
 var img; //for the loaded image
-var pieces = new Array[1, 2, 3, 4, 5, 6, 7, 8];
+
 var puzzleWidth;
 var puzzleHeight;
 var pieceWidth;
@@ -53,9 +53,10 @@ var mouse;
 /*function init(){
     img = new Image();
     img.addEventListener('load',onImage,false);
-    img.src = "mke.jpg"; */
+    img.src = "mke.jpg";
 }
-
+*/
+/*
 function shufflePuzzle(){
     pieces = shuffleArray(pieces);
     stage.clearRect(0, 0, puzzleWidth, puzzleHeight);
@@ -77,8 +78,19 @@ function shufflePuzzle(){
     }
     document.onmousedown = onPuzzleClick;
 }
+*/
 
 function shuffleArray(o){
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
+
+function insertShuffled(puzzleSet) {
+  var pieces = $(puzzleSet + '> li');
+  $(puzzleSet).empty();
+  $.each(shuffleArray(pieces), function(index, piece){
+    $(puzzleSet).append(piece);
+  });
+}
+
+insertShuffled('.puzzle-set-1');
