@@ -18,7 +18,7 @@ $(document).ready(function(){
       if (seconds < 10) {
         return mins + ":" + "0" + seconds;
       }
-      else {
+      else
         return mins + ":" + seconds;
       }
     },
