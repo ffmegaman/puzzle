@@ -28,4 +28,5 @@
   position: fixed;
   margin-left: 20em;
   z-index: 1000;
+  margin-top: -8px;
 }
