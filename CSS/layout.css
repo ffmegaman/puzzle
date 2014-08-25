@@ -78,7 +78,10 @@ a:active {
   padding-right: 2.1em;
 }
 
-
-
-
-
+.record-box{
+  display: inline-block;
+  border: .2em;
+  background-color: white;
+  margin-top: 1em;
+  float: right;
+}

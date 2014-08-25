@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 
   // Upon new game, instantiate a new GameRecord.
   // Start timer with timeObject.runTime(<instance variable of GameRecord>)
@@ -26,7 +26,7 @@ $(document).ready(function(){
       if(timeObject.stopTime === false){
         window.setTimeout(function(){
           timeObject.currentSeconds += 1;
-          console.log(timeObject.currentTime())
+          $('#timer > span').text(timeObject.currentTime());
           timeObject.runTime(gameRecord);
         }, 1000);
       }
@@ -36,4 +36,4 @@ $(document).ready(function(){
       }
     }
   }
-});
+
