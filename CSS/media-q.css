@@ -30,7 +30,20 @@
 
   #puzzle_level2{
     padding-left: 4.5em;
-}
+  }
+
+  #main-about-box{
+    width: 80%;
+  /*  height: 31.9em;*/
+    background-color: black;
+    position: fixed;
+    z-index: 1000;
+    margin-top: -8px;
+    margin-left: 4em;
+  }
+
+
+
 
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
@@ -73,7 +86,17 @@
 
   #puzzle_level2{
     padding-left: 0.8em;
-}
+  }
+
+  #main-about-box{
+    width: 90%;
+  /*  height: 31.9em;*/
+    background-color: black;
+    position: fixed;
+    z-index: 1000;
+    margin-top: -8px;
+    margin-left: 1em;
+  }
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
