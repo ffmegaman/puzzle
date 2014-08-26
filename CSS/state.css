@@ -27,19 +27,19 @@
   margin: 0 auto;
   position: fixed;
   margin-left: 12em;
-  z-index: 1000;
+  z-index: 998;
   margin-top: -8px;
 }
 
 #timer{
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: red;
   cursor: crosshair;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
 }
 #timer:hover{
-  color: white;
+  color: black;
   font-family: 'Playfair Display', serif;
   -webkit-transition:.5s;
   -moz-transition:.5s;
@@ -49,14 +49,14 @@
 }
 
 #average-time{
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: red;
   cursor: crosshair;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
 }
 #average-time:hover{
-  color: white;
+  color: black;
   font-family: 'Playfair Display', serif;
   -webkit-transition:.5s;
   -moz-transition:.5s;
@@ -66,18 +66,45 @@
 }
 
 #iq-level{
-  font-size: 1.6em;
+  font-size: 1.3em;
   color: red;
   cursor: crosshair;
   font-family: 'Playfair Display', serif;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
 }
 #iq-level:hover{
-  color: white;
+  color: black;
   font-family: 'Playfair Display', serif;
   -webkit-transition:.5s;
   -moz-transition:.5s;
   -ms-transition:.5s;
   -o-transition:.5s;
   transition:.5s;
+}
+
+#level2__puzz{
+  width: 87%;
+  height: 530px;
+  margin-left: 6.5em;
+  margin-right: 5em;
+  margin-top: 2em;
+/*  display: none;*/
+}
+
+#level2__puzz > li{
+  display: inline-block;
+  float: left;
+  margin-top: -3px;
+  opacity: .5;
+  width: 12%;
+/*FIX THIS ONE, RESPONSIVE NOT*/
+}
+
+#your-status{
+  padding-bottom: 1em;
+  margin-top: 4em;
+  float: left;
+  position: fixed;
+  display: none;
+  z-index: 1000;
 }
