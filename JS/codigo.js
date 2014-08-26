@@ -66,6 +66,26 @@ $(document).ready(function(){
   $('.puzzle-set-1').sortable();
   $('#puzzle-set-2').sortable();
 
+  // This hides the puzzle set
+  $('#puzzle-set-2').hide();
+
+  function shuffleArray(o){
+      for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+  }
+
+  function insertShuffled(puzzleSet) {
+    var pieces = $(puzzleSet + '> li');
+    $(puzzleSet).empty();
+    $.each(shuffleArray(pieces), function(index, piece){
+      $(puzzleSet).append(piece);
+    });
+  }
+
+  $('puzzle-set-1').on('click', insertShuffled('.puzzle-set-1'), false);
+
 
 });
+
+
 

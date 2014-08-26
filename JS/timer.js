@@ -18,7 +18,7 @@
       if (seconds < 10) {
         return mins + ":" + "0" + seconds;
       }
-      else {
+      else
         return mins + ":" + seconds;
       }
     },
@@ -36,4 +36,20 @@
       }
     }
   }
+
+if (timeObject.currentSeconds === 30) {
+  $("#iq-level span").fadeIn().text("Toddler");
+}
+else if (timeObject.currentSeconds === 60) {
+  $("#iq-level span").fadeIn().text("Rugrat");
+}
+else if (timeObject.currentSeconds === 90) {
+  $("#iq-level span").fadeIn().text("Infant");
+}
+else if (timeObject.currentSeconds === 120) {
+  $("#iq-level span").fadeIn().text("Fetus");
+}
+else (timeObject.currentSeconds === 150) {
+  $("#iq-level span").fadeIn().text("Egg");
+};
 

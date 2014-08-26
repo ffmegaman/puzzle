@@ -96,7 +96,6 @@
 }
 
 .puzzle-set-1{
-  display: none;
 }
 
 .puzzle-set-1 > li{
@@ -125,7 +124,6 @@
   width: 100%;
   margin-top: 2em;
   margin-left: -1.6em;
-/*  display: none;*/
 }
 
 #puzzle-set-2 > li{
@@ -140,20 +138,3 @@
   margin-top: -.3em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*always at the bottom*/
-.invisible{
-  display: none;
-}
