@@ -22,9 +22,20 @@ $(document).ready(function(){
     $(this).fadeOut(1300);
   });
 
-
-  $('#back-button').on('click', function(){
+  $('#main_logo').on('click', function(){
     $('#main-puzzle-box').fadeOut('slow');
+  });
+
+  $('#main-header').hover(function(){
+    $('#main-header').animate({
+      "opacity":".9"
+    });
+  });
+
+  $('#play_button, #puzzle-start').click(function(){
+    $('#main-header').animate({
+      "opacity":"1"
+    });
   });
 
   $('.puzzle-set-1').sortable();

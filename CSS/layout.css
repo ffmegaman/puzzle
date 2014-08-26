@@ -1,5 +1,5 @@
 body {
-  background: url(../img/pics.gif) no-repeat center center fixed;
+  background: url(../img/bg.gif) no-repeat center center fixed;
   -webkit-background-size:cover;
   -moz- background-size:cover;
   -o- background-
@@ -81,7 +81,7 @@ a:active {
 .record-box{
   display: inline-block;
   border: .2em;
-  background-color: white;
   margin-top: 1em;
-  float: right;
+  float: left;
+  margin-left: 2em;
 }
