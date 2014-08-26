@@ -82,7 +82,7 @@ $(document).ready(function(){
     });
   }
 
-  $('puzzle-set-1').on('click', insertShuffled('.puzzle-set-1'), false);
+  $('#play_button').on('click', insertShuffled('.puzzle-set-1'), false);
 
 
 });
