@@ -30,7 +30,23 @@
 
   #puzzle_level2{
     padding-left: 4.5em;
-}
+  }
+
+  #main-about-box{
+    width: 80%;
+  /*  height: 31.9em;*/
+    background-color: black;
+    position: fixed;
+    z-index: 1000;
+    margin-top: -8px;
+    margin-left: 4em;
+  }
+
+  #your-status{
+    margin-top: -1.3em;
+  }
+
+
 
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
@@ -44,7 +60,7 @@
   }
 
   #main-header{
-    height: 7.5em;
+    height: 15.5em;
   }
 
   .puzzle_nerds{
@@ -52,11 +68,7 @@
   }
 
   .el-menu{
-    font-size: 1em;
-  }
-
-  .el-menu:hover{
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   #play_button{
@@ -73,7 +85,24 @@
 
   #puzzle_level2{
     padding-left: 0.8em;
-}
+  }
+
+  #main-about-box{
+    width: 90%;
+  /*  height: 31.9em;*/
+    background-color: black;
+    position: fixed;
+    z-index: 1000;
+    margin-top: -8px;
+    margin-left: 1em;
+  }
+
+  #your-status{
+    padding-left: 2em;
+    margin-top: -2em;
+  }
+
+
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/

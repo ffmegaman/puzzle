@@ -1,5 +1,3 @@
-/*hidden*/
-/*Home page main block*/
 #play-wrapper{/*700px*/
   width: 100%;
   max-width: 100%;
@@ -7,8 +5,6 @@
   display: block;
   margin: 0 auto;
   margin-top: 12em;
-/*  display: none;*/
-/*Home page main block*/
 }
 
 #main-puzzle-box{
@@ -21,12 +17,125 @@
 }
 
 #main-about-box{
-  width: 50%;
-/*  height: 31.9em;*/
+  width: 70%;
   background-color: black;
   margin: 0 auto;
   position: fixed;
-  margin-left: 20em;
-  z-index: 1000;
+  margin-left: 12em;
+  z-index: 998;
   margin-top: -8px;
+}
+
+#timer{
+  font-size: 1.3em;
+  color: red;
+  cursor: crosshair;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+}
+#timer:hover{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+#average-time{
+  font-size: 1.3em;
+  color: red;
+  cursor: crosshair;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+}
+#average-time:hover{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+#iq-level{
+  font-size: 1.3em;
+  color: red;
+  cursor: crosshair;
+  font-family: 'Playfair Display', serif;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+}
+#iq-level:hover{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+#your-status{
+  padding-bottom: 1em;
+  margin-top: 4em;
+  float: left;
+  position: fixed;
+  display: none;
+  z-index: 1000;
+}
+
+.puzzle-set-container{
+  max-width: 98.0392156862745%;
+  width: 70%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 6.5em;
+}
+
+.puzzle-set-1{
+}
+
+.puzzle-set-1 > li{
+  display: inline-block;
+  float: left;
+  width: 17%;
+}
+
+.puzzle-set-1 > li > img{
+  width: 100%;
+  height: 100%;
+  margin-top: -5px;
+  opacity: 1;
+}
+
+.puzzle-set-1 > li > img:hover{
+  opacity: 1;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+#puzzle-set-2{
+  width: 87%;
+  height: 530px;
+  margin-left: 6.5em;
+  margin-right: 5em;
+  margin-top: 2em;
+}
+
+#puzzle-set-2 > li{
+  display: inline-block;
+  float: left;
+  opacity: .5;
+  width: 12%;
+}
+
+#puzzle-set-2 > li > img{
+  width: 100%;
+  margin-top: -.3em;
 }

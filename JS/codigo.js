@@ -12,8 +12,7 @@ $(document).ready(function(){
     $('#main-about-box').show(function(){
       $(this).click().animate({
       "height":"31.9em",
-      "display":"block",
-      "z-index":"1000"
+      "display":"block"
       },'slow');
     });
   });
@@ -22,14 +21,72 @@ $(document).ready(function(){
     $(this).fadeOut(1300);
   });
 
-
-  $('#back-button').on('click', function(){
+  $('#main_logo').on('click', function(){
     $('#main-puzzle-box').fadeOut('slow');
   });
 
+  $('#main-header').mouseenter(function(){
+    $('#main-header').animate({
+      "opacity":"1"
+      });
+    });
+
+  $('#main-header').mouseleave(function(){
+    $(this).animate({
+      "opacity":"1"
+    });
+  });
+
+  $('#play_button, #puzzle-start, #click-about').click(function(){
+    $('#main-header').animate({
+      "opacity":"1"
+    }, 'fast');
+  });
+
+  $('li').hover(function(){
+    $(this).animate({
+      "opacity":"1"
+    }, 'fast');
+  });
+
+  $('#play_button, #puzzle-start').click(function(){
+    $('#your-status').slideToggle("fast", function(){
+      $('#your-status').animate({
+        "width":"18%",
+        "opacity":"1",
+        "z-index":"998"
+      }, 'fast');
+    });
+  });
+
+  $('#main_logo').on('click', function(){
+    $('#your-status').fadeOut();
+  });
+
+
   $('.puzzle-set-1').sortable();
-  $('.puzzle-set-2').sortable();
+  $('#puzzle-set-2').sortable();
+
+  // This hides the puzzle set
+  $('#puzzle-set-2').hide();
+
+  function shuffleArray(o){
+      for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+  }
+
+  function insertShuffled(puzzleSet) {
+    var pieces = $(puzzleSet + '> li');
+    $(puzzleSet).empty();
+    $.each(shuffleArray(pieces), function(index, piece){
+      $(puzzleSet).append(piece);
+    });
+  }
+
+  $('puzzle-set-1').on('click', insertShuffled('.puzzle-set-1'), false);
 
 
 });
+
+
 
