@@ -65,7 +65,7 @@ $(document).ready(function(){
 
 
   $('.puzzle-set-1').sortable();
-  $('#level2__puzz').sortable();
+  $('#puzzle-set-2').sortable();
 
 
 });
