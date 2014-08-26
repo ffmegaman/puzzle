@@ -63,7 +63,6 @@ $(document).ready(function(){
     $('#your-status').fadeOut();
   });
 
-
   $('.puzzle-set-1').sortable();
   $('#puzzle-set-2').sortable();
 
