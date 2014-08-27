@@ -12,22 +12,24 @@ $(document).ready(function(){
     $('#main-about-box').show(function(){
       $(this).click().animate({
        "height":"35.9em",
-       "display":"block"
+       "display":"block",
+       "float":"left"
       },'slow');
     });
   });
 
   $('#click-about').click(function(){
-    $('#about-chino, #about-phillip').show(function(){
+    $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
       $(this).click().animate({
         "display":"block"
       });
     });
   });
 
-  $('#main-about-box').mouseleave(function(){
-    $(this).fadeOut(1300);
+  $('.go-back').click(function(){
+    $('#main-about-box').fadeOut('slow');
   });
+
 
   $('#main_logo').on('click', function(){
     $('#main-puzzle-box').fadeOut('slow');
