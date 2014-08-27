@@ -45,12 +45,6 @@ $(document).ready(function(){
     }, 'fast');
   });
 
-  $('li').hover(function(){
-    $(this).animate({
-      "opacity":"1"
-    }, 'fast');
-  });
-
   $('#play_button, #puzzle-start').click(function(){
     $('#your-status').slideToggle("fast", function(){
       $('#your-status').animate({
@@ -76,13 +70,13 @@ $(document).ready(function(){
     $('#puzzle-set-2').removeClass('blur');
   });
 
-  $('#click-about').click(function(){
-    $('.level-set').hide();
-  });
+  // $('#click-about').click(function(){
+  //   $('.level-set').hide();
+  // });
 
-  $('.go-back').click(function(){
-    $('.level-set').show('slow');
-  });
+  // $('.go-back').click(function(){
+  //   $('.level-set').show('slow');
+  // });
 
   $('#main_logo').on('click', function(){
     $('#your-status').fadeOut();
@@ -92,9 +86,9 @@ $(document).ready(function(){
   $('#puzzle-set-2').sortable();
 
   // This hides the puzzle set
-  $('#puzzle-set-1').hide();
+  $('#puzzle-set-2').hide();
 
-  var currentLevel = '.puzzle-set-1';
+  var currentLevel = '#puzzle-set-1';
 
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -196,7 +190,7 @@ $(document).ready(function(){
 
   var levelObject = {
     nextLevel: function(){
-      $('.puzzle-set-1').hide();
+      $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
@@ -204,10 +198,10 @@ $(document).ready(function(){
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
-      $('.puzzle-set-1 li img').each(function(){
+      $('#puzzle-set-1 li img').each(function(){
         unsortedPieces.push($(this).attr('src'));
       });
-      $('.puzzle-set-1 li img').each(function(){
+      $('#puzzle-set-1 li img').each(function(){
         originalPieces.push($(this).attr('src'));
       });
       var sortedPieces = unsortedPieces.sort();
@@ -226,7 +220,7 @@ $(document).ready(function(){
 
   $('.time-start').on('click', startGame1);
 
-  $('.puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
+  $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
 
 
 });

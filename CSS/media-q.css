@@ -74,7 +74,8 @@
   }
 
   .level-set{
-    margin-left: 2em;
+    margin-top: -1em;
+    margin-left: 5em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -237,6 +238,11 @@
 
   .info-us{
     font-size: 1.2em;
+  }
+
+  .level-set{
+    margin-top: 0.2em;
+    margin-left: 2em;
   }
 
 

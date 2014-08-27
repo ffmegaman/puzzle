@@ -3,8 +3,9 @@
   display: none;
   color: red;
   font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
+  font-size: 4em;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  margin-top: -2em;
 }
 
 #play-wrapper{/*700px*/
@@ -31,7 +32,6 @@
   margin: 0 auto;
   position: fixed;
   margin-left: 11.5em;
-  z-index: 998;
   margin-top: -15px;
   padding-bottom: 0.5em;
   border-bottom-left-radius: 50px;
@@ -114,10 +114,6 @@
   display: inline-block;
   width: 19%;
   margin-left: -4px;
-  opacity: .8;
-}
-#puzzle-set-1 > li:hover{
-  opacity: 1;
 }
 
 #puzzle-set-1 > li > img{
@@ -127,19 +123,14 @@
 /*  -webkit-filter: blur(10px);*/
 }
 
-#puzzle-set-1 > li > img:hover{
-  opacity: 1;
-}
-
 #puzzle-set-2{
-  width: 100%;
+  width: 98%;
   margin-top: 2em;
 }
 
 #puzzle-set-2 > li{
   display: inline-block;
   margin-left: -4px;
-  opacity: .6;
   width: 12%;
 }
 
