@@ -75,6 +75,31 @@ var timeObject = {
   }
 };
 
+
+var levelObject = {
+  nextLevel: function(){
+    $('.puzzle-set-1').hide();
+    $(currentLevel).show();
+    $('.start-button').show();
+    $('.shuffle-button').css({'display': 'none'});
+  },
+  checkPuzzleComplete: function(){
+    var unsortedPieces = [];
+    var originalPieces = [];
+    $('.puzzle-set-1 li img').each(function(){
+      unsortedPieces.push($(this).attr('src'));
+    });
+    $('.puzzle-set-1 li img').each(function(){
+      originalPieces.push($(this).attr('src'));
+    });
+    var sortedPieces = unsortedPieces.sort();
+    if (sortedPieces.join() == originalPieces.join()){
+      currentLevel = '#puzzle-set-2';
+      levelObject.nextLevel();
+    }
+  }
+}
+
 function startGame1(){
   timeObject.runTime(function(){
     var game1 = new GameRecord();
@@ -82,3 +107,5 @@ function startGame1(){
 }
 
 $('.time-start').on('click', startGame1);
+
+$('.puzzle-set-1').on('sortupdate', levelObject.checkPuzzleComplete);
