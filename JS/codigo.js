@@ -26,6 +26,10 @@ $(document).ready(function(){
     });
   });
 
+  $('#click-about').click(function(){
+    $('#main-puzzle-box').blur();
+  });
+
   $('.go-back').click(function(){
     $('#main-about-box').fadeOut('slow');
   });
@@ -57,15 +61,38 @@ $(document).ready(function(){
     });
   });
 
+  $('#click-about').click(function(){
+    $('#puzzle-set-1').addClass('blur');
+  });
+  $('.go-back').click(function(){
+    $('#puzzle-set-1').removeClass('blur');
+  });
+
+  $('#click-about').click(function(){
+    $('#puzzle-set-2').addClass('blur');
+  });
+
+  $('.go-back').click(function(){
+    $('#puzzle-set-2').removeClass('blur');
+  });
+
+  $('#click-about').click(function(){
+    $('.level-set').hide();
+  });
+
+  $('.go-back').click(function(){
+    $('.level-set').show('slow');
+  });
+
   $('#main_logo').on('click', function(){
     $('#your-status').fadeOut();
   });
 
-  $('.puzzle-set-1').sortable();
+  $('#puzzle-set-1').sortable();
   $('#puzzle-set-2').sortable();
 
   // This hides the puzzle set
-  $('#puzzle-set-2').hide();
+  $('#puzzle-set-1').hide();
 
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);

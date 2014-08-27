@@ -189,8 +189,8 @@
     transition: 1s ease;
   }
 
-  .puzzle-set-1{
-    margin-left: -5.5em;
+  #puzzle-set-1{
+    margin-left: -6em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;

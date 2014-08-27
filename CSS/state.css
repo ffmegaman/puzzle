@@ -30,11 +30,12 @@
 }
 
 #timer{
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: red;
   cursor: crosshair;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
+  z-index: 1000;
 }
 #timer:hover{
   color: black;
@@ -47,11 +48,12 @@
 }
 
 #average-time{
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: red;
   cursor: crosshair;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
+  z-index: 1000;
 }
 #average-time:hover{
   color: black;
@@ -64,11 +66,12 @@
 }
 
 #iq-level{
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: red;
   cursor: crosshair;
   font-family: 'Playfair Display', serif;
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  z-index: 1000;
 }
 #iq-level:hover{
   color: black;
@@ -98,32 +101,30 @@
   padding-left: 6.1em;
 }
 
-.puzzle-set-1 > li{
+#puzzle-set-1 > li{
   display: inline-block;
   width: 19%;
   margin-left: -4px;
+  opacity: .8;
+}
+#puzzle-set-1 > li:hover{
+  opacity: 1;
 }
 
-.puzzle-set-1 > li > img{
+#puzzle-set-1 > li > img{
   width: 100%;
   height: 100%;
   margin-top: -5px;
-  opacity: 1;
+/*  -webkit-filter: blur(10px);*/
 }
 
-.puzzle-set-1 > li > img:hover{
+#puzzle-set-1 > li > img:hover{
   opacity: 1;
-  -webkit-transition:.5s;
-  -moz-transition:.5s;
-  -ms-transition:.5s;
-  -o-transition:.5s;
-  transition:.5s;
 }
 
 #puzzle-set-2{
   width: 100%;
   margin-top: 2em;
-  margin-left: -1.6em;
 }
 
 #puzzle-set-2 > li{
@@ -136,5 +137,14 @@
 #puzzle-set-2 > li > img{
   width: 100%;
   margin-top: -.3em;
+}
+
+.blur{
+  -webkit-filter: blur(10px);
+  -webkit-transition:.1s;
+  -moz-transition:.1s;
+  -ms-transition:.1s;
+  -o-transition:.1s;
+  transition:.1s;
 }
 
