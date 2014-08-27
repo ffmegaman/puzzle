@@ -65,6 +65,8 @@ $(document).ready(function(){
   // This hides the puzzle set
   $('#puzzle-set-2').hide();
 
+  var currentLevel = '.puzzle-set-1';
+
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
       return o;
@@ -79,36 +81,125 @@ $(document).ready(function(){
   }
 
   $('.start-button').on('click', function(){
-    insertShuffled('.puzzle-set-1');
+    insertShuffled(currentLevel);
     $(this).hide();
     $('.shuffle-button').css({'display': 'inline-block'});
   });
   $('.shuffle-button').on('click', function(){
-    insertShuffled('.puzzle-set-1');
+    insertShuffled(currentLevel);
   });
 
-/*
-  function checkPuzzleCompletion(){
-    var unsortedPieces = [];
-    var originalPieces = [];
-
-    $('.puzzle-set-1 li img').each(function(){
-      unsortedPieces.push($(this).attr('src'));
-    });
-
-    $('.puzzle-set-1 li img').each(function(){
-      originalPieces.push($(this).attr('src'));
-    });
-
-    var sortedPieces = unsortedPieces.sort();
-
-    console.log(originalPieces);
-
-    console.log(sortedPieces);
-
-    console.log(sortedPieces.join() == originalPieces.join());
+  // Upon new game, instantiate a new GameRecord.
+  // Start timer with timeObject.runTime(<instance variable of GameRecord>)
+  // For example, if you used: var game = new GameRecord;
+  // Start timer like this: timeObject.runTime(game);
+  // Stop timer with timeObject.stopTime = true;
+  function GameRecord() {
+    this.totalTime = 0;
   }
-*/
+
+  var timeObject = {
+    stopTime: false,
+    currentSeconds: 0,
+    currentTime: function(){
+      var mins = Math.floor(this.currentSeconds / 60);
+      var seconds = this.currentSeconds % 60;
+      if (seconds < 10) {
+        return mins + ":" + "0" + seconds;
+      }
+      else {
+        return mins + ":" + seconds;
+      }
+    },
+    messages: function(){
+      if (timeObject.currentSeconds === 30) {
+        $("#iq-level span").fadeIn().text("Toddler");
+        $("#messages").slideDown("slow").text("Your IQ has lowered to Toddler status!");
+        setTimeout(function(){
+          $('#messages').empty();
+        }, 5000);
+      }
+      else if (timeObject.currentSeconds === 60) {
+        $("#iq-level span").fadeIn().text("Rugrat");
+        $("#messages").slideDown("slow").text("Your IQ has lowered to Rugrat status!");
+        setTimeout(function(){
+          $('#messages').empty();
+        }, 5000);
+      }
+      else if (timeObject.currentSeconds === 90) {
+        $("#iq-level span").fadeIn().text("Infant");
+        $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+        setTimeout(function(){
+          $('#messages').empty();
+        }, 5000);
+      }
+      else if (timeObject.currentSeconds === 120) {
+        $("#iq-level span").fadeIn().text("Fetus");
+        $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+        setTimeout(function(){
+          $('#messages').empty();
+        }, 5000);
+      }
+      else if (timeObject.currentSeconds === 150) {
+        $("#iq-level span").fadeIn().text("Egg");
+        $("#messages").slideDown("slow").text("Your IQ has lowered to Egg status!");
+        setTimeout(function(){
+          $('#messages').empty();
+        }, 5000);
+      };
+    },
+    runTime: function(gameRecord){
+      timeObject.messages();
+      if(timeObject.stopTime === false){
+        window.setTimeout(function(){
+          timeObject.currentSeconds += 1;
+          $('#timer span').text(timeObject.currentTime());
+          timeObject.runTime(gameRecord);
+        }, 1000);
+      }
+      else{
+        gameRecord.totalTime = timeObject.currentTime();
+        this.currentSeconds = 0;
+      }
+    }
+  };
+
+
+  var levelObject = {
+    nextLevel: function(){
+      $('.puzzle-set-1').hide();
+      $(currentLevel).show();
+      $('.start-button').show();
+      $('.shuffle-button').css({'display': 'none'});
+    },
+    checkPuzzleComplete: function(){
+      var unsortedPieces = [];
+      var originalPieces = [];
+      $('.puzzle-set-1 li img').each(function(){
+        unsortedPieces.push($(this).attr('src'));
+      });
+      $('.puzzle-set-1 li img').each(function(){
+        originalPieces.push($(this).attr('src'));
+      });
+      var sortedPieces = unsortedPieces.sort();
+      if (sortedPieces.join() == originalPieces.join()){
+        currentLevel = '#puzzle-set-2';
+        levelObject.nextLevel();
+      }
+    }
+  }
+
+  function startGame1(){
+    timeObject.runTime(function(){
+      var game1 = new GameRecord();
+    });
+  }
+
+  $('.time-start').on('click', startGame1);
+
+  $('.puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
+
+
 });
 
 

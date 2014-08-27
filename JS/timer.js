@@ -77,6 +77,12 @@ var timeObject = {
 
 
 var levelObject = {
+  nextLevel: function(){
+    $('.puzzle-set-1').hide();
+    $(currentLevel).show();
+    $('.start-button').show();
+    $('.shuffle-button').css({'display': 'none'});
+  },
   checkPuzzleComplete: function(){
     var unsortedPieces = [];
     var originalPieces = [];
@@ -87,10 +93,10 @@ var levelObject = {
       originalPieces.push($(this).attr('src'));
     });
     var sortedPieces = unsortedPieces.sort();
-    console.log(originalPieces);
-    console.log(sortedPieces);
-    console.log(sortedPieces.join() == originalPieces.join());
-    alert(sortedPieces.join() == originalPieces.join());
+    if (sortedPieces.join() == originalPieces.join()){
+      currentLevel = '#puzzle-set-2';
+      levelObject.nextLevel();
+    }
   }
 }
 
