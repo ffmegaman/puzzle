@@ -1,6 +1,6 @@
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
-@media (max-width: 1020px){  /*DESKTOP*/
+@media (max-width: 900px){  /*DESKTOP*/
   .puzzle_nerds{
     font-size: 5em;
   }
@@ -10,7 +10,7 @@
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
-@media (max-width: 850px){  /*TABLET*/
+@media (max-width: 1100px){  /*TABLET*/
   .puzzle_nerds{
     font-size: 4.5em;
     -webkit-transition: 1s ease;
@@ -82,7 +82,7 @@
   }
 
   #about-trottier{
-    margin-top: -2em;
+    margin-top: -5em;
     margin-left: 11.8em;
     width: 120px;
     height: 120px;
@@ -92,12 +92,13 @@
     transition: 1s ease;
   }
 
+  .info-us{
+    font-size: 1.2em;
+  }
 
 
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
-
-
 
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
 @media (max-width: 600px){  /*MOBILE*/
@@ -199,6 +200,7 @@
   #about-chino{
     width: 100px;
     height: 50px;
+    float: right;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -206,6 +208,7 @@
   }
 
   #about-phillip{
+    float: left;
     width: 100px;
     height: 50px;
     -webkit-transition: 1s ease;
@@ -222,6 +225,18 @@
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
     transition: 1s ease;
+  }
+
+  #main-about-box{
+    margin-top: -8em;
+  }
+
+  #la-info{
+    height: 19em;
+  }
+
+  .info-us{
+    font-size: 1.2em;
   }
 
 

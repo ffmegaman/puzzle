@@ -145,17 +145,17 @@
 #la-info{
   width: 90%;
   height: 10em;
-  background-color: white;
+  background-color: #6D4039;
   clear: both;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 0px 30px white;
+  box-shadow: 0px 0px 30px grey;
   margin-top: 3em;
   display: none;
+  border-radius: 10px;
 }
-
 #la-info:hover{
-  box-shadow: 0px 0px 30px red;
+  box-shadow: 0px 0px 30px #6D4039;
   -webkit-transition:.5s;
   -moz-transition:.5s;
   -ms-transition:.5s;
@@ -170,12 +170,28 @@
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
 }
+.go-back:hover{
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 5);
+}
 
-p{
-  font-size: 1.5em;
+.red{
+  color: red;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-size: 2em;
   text-align: center;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
   font-family: 'Playfair Display', serif;
 }
+
+.info-us{
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+  color: grey;
+}
+
+
 
 
 

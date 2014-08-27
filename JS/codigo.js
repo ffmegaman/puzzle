@@ -11,7 +11,7 @@ $(document).ready(function(){
   $('#click-about').click(function(){
     $('#main-about-box').show(function(){
       $(this).click().animate({
-       "height":"35.9em",
+       // "height":"35.9em",
        "display":"block",
        "float":"left"
       },'slow');
