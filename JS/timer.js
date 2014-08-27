@@ -25,18 +25,38 @@ var timeObject = {
   messages: function(){
     if (timeObject.currentSeconds === 30) {
       $("#iq-level span").fadeIn().text("Toddler");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Toddler status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 60) {
       $("#iq-level span").fadeIn().text("Rugrat");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Rugrat status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 90) {
       $("#iq-level span").fadeIn().text("Infant");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 120) {
       $("#iq-level span").fadeIn().text("Fetus");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 150) {
       $("#iq-level span").fadeIn().text("Egg");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Egg status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     };
   },
   runTime: function(gameRecord){
@@ -55,10 +75,37 @@ var timeObject = {
   }
 };
 
+
+var levelObject = {
+  nextLevel: function(){
+    $('.puzzle-set-1').hide();
+    $(currentLevel).show();
+    $('.start-button').show();
+    $('.shuffle-button').css({'display': 'none'});
+  },
+  checkPuzzleComplete: function(){
+    var unsortedPieces = [];
+    var originalPieces = [];
+    $('.puzzle-set-1 li img').each(function(){
+      unsortedPieces.push($(this).attr('src'));
+    });
+    $('.puzzle-set-1 li img').each(function(){
+      originalPieces.push($(this).attr('src'));
+    });
+    var sortedPieces = unsortedPieces.sort();
+    if (sortedPieces.join() == originalPieces.join()){
+      currentLevel = '#puzzle-set-2';
+      levelObject.nextLevel();
+    }
+  }
+}
+
 function startGame1(){
   timeObject.runTime(function(){
     var game1 = new GameRecord();
   });
 }
 
-$('#play_button').on('click', startGame1(), false);
+$('.time-start').on('click', startGame1);
+
+$('.puzzle-set-1').on('sortupdate', levelObject.checkPuzzleComplete);
