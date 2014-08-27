@@ -25,18 +25,38 @@ var timeObject = {
   messages: function(){
     if (timeObject.currentSeconds === 30) {
       $("#iq-level span").fadeIn().text("Toddler");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Toddler status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 60) {
       $("#iq-level span").fadeIn().text("Rugrat");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Rugrat status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 90) {
       $("#iq-level span").fadeIn().text("Infant");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 120) {
       $("#iq-level span").fadeIn().text("Fetus");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Infant status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     }
     else if (timeObject.currentSeconds === 150) {
       $("#iq-level span").fadeIn().text("Egg");
+      $("#messages").slideDown("slow").text("Your IQ has lowered to Egg status!");
+      setTimeout(function(){
+        $('#messages').empty();
+      }, 5000);
     };
   },
   runTime: function(gameRecord){
