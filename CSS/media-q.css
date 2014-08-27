@@ -1,5 +1,6 @@
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
-@media (max-width: 1020px){  /*DESKTOP*/
+
+@media (max-width: 900px){  /*DESKTOP*/
   .puzzle_nerds{
     font-size: 5em;
   }
@@ -8,28 +9,46 @@
 }
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
-
-
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
-@media (max-width: 850px){  /*TABLET*/
+@media (max-width: 1100px){  /*TABLET*/
   .puzzle_nerds{
     font-size: 4.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #main-header{
     height: 8.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #main_logo{
     font-size: 3.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #puzzle_level1{
     padding-left: 4.2em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #puzzle_level2{
     padding-left: 4.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #main-about-box{
@@ -40,47 +59,96 @@
     z-index: 1000;
     margin-top: -8px;
     margin-left: 4.7em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #your-status{
     margin-top: -1.3em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   .level-set{
-    margin-left: 2em;
+    margin-top: -1em;
+    margin-left: 5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
+  #about-trottier{
+    margin-top: -5em;
+    margin-left: 11.8em;
+    width: 120px;
+    height: 120px;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
+  .info-us{
+    font-size: 1.2em;
+  }
 
 
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
 
-
-
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
 @media (max-width: 600px){  /*MOBILE*/
   #main_logo{
     font-size: 3em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #main-header{
     height: 15.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   .puzzle_nerds{
     font-size: 3em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   .el-menu{
     font-size: 0.9em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #play_button{
     width: 21.411765%;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #back-button{
     width: 21.411765%;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #main-about-box{
@@ -91,33 +159,90 @@
     z-index: 1000;
     margin-top: -8px;
     margin-left: 1em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #your-status{
     padding-left: 2em;
     margin-top: -2em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #puzzle-set-2{
     margin-left: -3.5em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   .level-set{
     margin-left: -0.7em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
-  .puzzle-set-1{
-    margin-left: -5.5em;
+  #puzzle-set-1{
+    margin-left: -6em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #about-chino{
-  width: 100px;
-  height: 50px;
+    width: 100px;
+    height: 50px;
+    float: right;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
   }
 
   #about-phillip{
-  width: 100px;
-  height: 50px;
+    float: left;
+    width: 100px;
+    height: 50px;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
+  #about-trottier{
+    width: 100px;
+    height: 50px;
+    margin-left: 75px;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
+  #main-about-box{
+    margin-top: -8em;
+  }
+
+  #la-info{
+    height: 19em;
+  }
+
+  .info-us{
+    font-size: 1.2em;
+  }
+
+  .level-set{
+    margin-top: 0.2em;
+    margin-left: 2em;
   }
 
 

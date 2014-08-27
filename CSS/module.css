@@ -86,12 +86,16 @@
 
 .level-set {
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
-  font-size: 50px;
+  font-size: 35px;
   cursor: pointer;
+  margin-top: 2em;
+  margin-left: 1em;
+  text-align: left;
 }
+
 .level-set:hover{
   text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
-  font-size: 50px;
+  font-size: 36px;
   cursor: pointer;
   color: white;
   -webkit-transition:.8s;
@@ -114,7 +118,7 @@
 
 #about-chino{
   width: 190px;
-  height: 150px;
+  height: 190px;
   float: left;
   display: none;
   margin-top: 2em;
@@ -124,13 +128,74 @@
 
 #about-phillip{
   width: 190px;
-  height: 150px;
+  height: 190px;
   float: right;
   display: none;
   margin-top: 2em;
   margin-right: 1em;
   box-shadow: 0px 0px 20px white;
 }
+
+#about-trottier{
+  width: 190px;
+  height: 190px;
+  clear: both;
+  display: none;
+  margin-top: 2em;
+  margin-right: 1em;
+  margin-left: 11em;
+  box-shadow: 0px 0px 20px white;
+}
+
+#la-info{
+  width: 90%;
+  height: 10em;
+  background-color: #6D4039;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 30px grey;
+  margin-top: 3em;
+  display: none;
+  border-radius: 10px;
+}
+#la-info:hover{
+  box-shadow: 0px 0px 30px #6D4039;
+  -webkit-transition:.5s;
+  -moz-transition:.5s;
+  -ms-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+
+.go-back{
+  font-size: 2em;
+  cursor: pointer;
+  text-align: center;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+}
+.go-back:hover{
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 5);
+}
+
+.red{
+  color: red;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-size: 2em;
+  text-align: center;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+}
+
+.info-us{
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow:0px 0px 20px  rgba(255, 255, 255, 0.5);
+  font-family: 'Playfair Display', serif;
+  color: grey;
+}
+
 
 
 
