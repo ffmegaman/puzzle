@@ -51,7 +51,7 @@ else if (timeObject.currentSeconds === 90) {
 }
 else if (timeObject.currentSeconds === 120) {
   $("#iq-level span").fadeIn().text("Fetus");
-  $("#messages").slideDown("slow").text("Your intelligence has shrunk to Fetus status!");
+  $("#messages").slideDown("slow").text("Your intelligence has shrunk to Infant status!");
 }
 else (timeObject.currentSeconds === 150) {
   $("#iq-level span").fadeIn().text("Egg");

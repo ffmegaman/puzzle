@@ -25,18 +25,23 @@ var timeObject = {
   messages: function(){
     if (timeObject.currentSeconds === 30) {
       $("#iq-level span").fadeIn().text("Toddler");
+      $("#messages").slideDown("slow").text("Your intelligence has shrunk to Toddler status!");
     }
     else if (timeObject.currentSeconds === 60) {
       $("#iq-level span").fadeIn().text("Rugrat");
+      $("#messages").slideDown("slow").text("Your intelligence has shrunk to Rugrat status!");
     }
     else if (timeObject.currentSeconds === 90) {
       $("#iq-level span").fadeIn().text("Infant");
+      $("#messages").slideDown("slow").text("Your intelligence has shrunk to Infant status!");
     }
     else if (timeObject.currentSeconds === 120) {
       $("#iq-level span").fadeIn().text("Fetus");
+      $("#messages").slideDown("slow").text("Your intelligence has shrunk to Infant status!");
     }
     else if (timeObject.currentSeconds === 150) {
       $("#iq-level span").fadeIn().text("Egg");
+      $("#messages").slideDown("slow").text("Your intelligence has shrunk to Egg status!");
     };
   },
   runTime: function(gameRecord){
