@@ -11,7 +11,7 @@
 
 
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
-@media (max-width: 800px){  /*TABLET*/
+@media (max-width: 850px){  /*TABLET*/
   .puzzle_nerds{
     font-size: 4.5em;
   }
@@ -39,7 +39,7 @@
     position: fixed;
     z-index: 1000;
     margin-top: -8px;
-    margin-left: 4em;
+    margin-left: 4.7em;
   }
 
   #your-status{
@@ -83,14 +83,6 @@
     width: 21.411765%;
   }
 
-  #puzzle_level1{
-    padding-left: 1.5em;
-  }
-
-  #puzzle_level2{
-    padding-left: 0.8em;
-  }
-
   #main-about-box{
     width: 90%;
   /*  height: 31.9em;*/
@@ -113,6 +105,21 @@
   .level-set{
     margin-left: -0.7em;
   }
+
+  .puzzle-set-1{
+    margin-left: -5.5em;
+  }
+
+  #about-chino{
+  width: 100px;
+  height: 50px;
+  }
+
+  #about-phillip{
+  width: 100px;
+  height: 50px;
+  }
+
 
 
 }
