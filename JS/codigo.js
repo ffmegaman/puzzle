@@ -78,9 +78,14 @@ $(document).ready(function(){
     });
   }
 
-  $('#play_button').on('click', insertShuffled('.puzzle-set-1'), false);
-
-
+  $('.start-button').on('click', function(){
+    insertShuffled('.puzzle-set-1');
+    $(this).hide();
+    $('.shuffle-button').css({'display': 'inline-block'});
+  });
+  $('.shuffle-button').on('click', function(){
+    insertShuffled('.puzzle-set-1');
+  });
 });
 
 
