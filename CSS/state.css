@@ -1,4 +1,4 @@
-.centered{
+/*.centered{
   text-align: center;
   font-size: 1.5em;
   color: #ff0000;
@@ -16,7 +16,8 @@
   float: right;
   margin: 5%;
   cursor: pointer;
-}
+}*/
+
 #messages{
   text-align: center;
   display: none;
