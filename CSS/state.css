@@ -33,6 +33,7 @@
   position: fixed;
   margin-left: 11.5em;
   margin-top: -15px;
+  z-index: 998;
   padding-bottom: 0.5em;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
