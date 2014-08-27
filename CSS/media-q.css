@@ -46,6 +46,10 @@
     margin-top: -1.3em;
   }
 
+  .level-set{
+    margin-left: 2em;
+  }
+
 
 
 }
@@ -102,6 +106,13 @@
     margin-top: -2em;
   }
 
+  #puzzle-set-2{
+    margin-left: -3.5em;
+  }
+
+  .level-set{
+    margin-left: -0.7em;
+  }
 
 
 }

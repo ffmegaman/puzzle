@@ -96,12 +96,12 @@
 }
 
 .puzzle-set-container{
-  max-width: 98.0392156862745%;
-  width: 70%;
+  max-width: 99.0392156862745%;
+  width: 75%;
   margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 6.5em;
+  padding-left: 6.1em;
 }
 
 .puzzle-set-1{
@@ -130,17 +130,15 @@
 }
 
 #puzzle-set-2{
-  width: 87%;
-  height: 530px;
-  margin-left: 6.5em;
-  margin-right: 5em;
+  width: 100%;
   margin-top: 2em;
+  margin-left: -1.6em;
 }
 
 #puzzle-set-2 > li{
   display: inline-block;
-  float: left;
-  opacity: .5;
+  margin-left: -4px;
+  opacity: .6;
   width: 12%;
 }
 
@@ -148,3 +146,4 @@
   width: 100%;
   margin-top: -.3em;
 }
+
