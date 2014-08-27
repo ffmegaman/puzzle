@@ -15,7 +15,8 @@
 }
 
 .shuffle-button{
-  text-align: center;
+  display: none;
+  text-align: left;
   font-family: 'Playfair Display', serif;
   font-size: 2em;
   color: black;

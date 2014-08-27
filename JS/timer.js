@@ -81,4 +81,4 @@ function startGame1(){
   });
 }
 
-$('#play_button').on('click', startGame1(), false);
+$('.time-start').on('click', startGame1);
