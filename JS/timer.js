@@ -75,6 +75,25 @@ var timeObject = {
   }
 };
 
+
+var levelObject = {
+  checkPuzzleComplete: function(){
+    var unsortedPieces = [];
+    var originalPieces = [];
+    $('.puzzle-set-1 li img').each(function(){
+      unsortedPieces.push($(this).attr('src'));
+    });
+    $('.puzzle-set-1 li img').each(function(){
+      originalPieces.push($(this).attr('src'));
+    });
+    var sortedPieces = unsortedPieces.sort();
+    console.log(originalPieces);
+    console.log(sortedPieces);
+    console.log(sortedPieces.join() == originalPieces.join());
+    alert(sortedPieces.join() == originalPieces.join());
+  }
+}
+
 function startGame1(){
   timeObject.runTime(function(){
     var game1 = new GameRecord();
@@ -82,3 +101,5 @@ function startGame1(){
 }
 
 $('.time-start').on('click', startGame1);
+
+$('.puzzle-set-1').on('sortupdate', levelObject.checkPuzzleComplete);

@@ -86,6 +86,29 @@ $(document).ready(function(){
   $('.shuffle-button').on('click', function(){
     insertShuffled('.puzzle-set-1');
   });
+
+/*
+  function checkPuzzleCompletion(){
+    var unsortedPieces = [];
+    var originalPieces = [];
+
+    $('.puzzle-set-1 li img').each(function(){
+      unsortedPieces.push($(this).attr('src'));
+    });
+
+    $('.puzzle-set-1 li img').each(function(){
+      originalPieces.push($(this).attr('src'));
+    });
+
+    var sortedPieces = unsortedPieces.sort();
+
+    console.log(originalPieces);
+
+    console.log(sortedPieces);
+
+    console.log(sortedPieces.join() == originalPieces.join());
+  }
+*/
 });
 
 
