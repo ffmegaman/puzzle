@@ -8,12 +8,20 @@ $(document).ready(function(){
     });
   });
 
-    $('#click-about').click(function(){
+  $('#click-about').click(function(){
     $('#main-about-box').show(function(){
       $(this).click().animate({
-      "height":"31.9em",
-      "display":"block"
+       "height":"35.9em",
+       "display":"block"
       },'slow');
+    });
+  });
+
+  $('#click-about').click(function(){
+    $('#about-chino, #about-phillip').show(function(){
+      $(this).click().animate({
+        "display":"block"
+      });
     });
   });
 
@@ -23,18 +31,6 @@ $(document).ready(function(){
 
   $('#main_logo').on('click', function(){
     $('#main-puzzle-box').fadeOut('slow');
-  });
-
-  $('#main-header').mouseenter(function(){
-    $('#main-header').animate({
-      "opacity":"1"
-      });
-    });
-
-  $('#main-header').mouseleave(function(){
-    $(this).animate({
-      "opacity":"1"
-    });
   });
 
   $('#play_button, #puzzle-start, #click-about').click(function(){

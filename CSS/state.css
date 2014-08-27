@@ -36,7 +36,7 @@
 }
 
 #main-puzzle-box{
-  height: 37.7em;
+  height: 39.7em;
   background-color:black;
   position: fixed;
   float: right;
@@ -49,7 +49,7 @@
   background-color: black;
   margin: 0 auto;
   position: fixed;
-  margin-left: 12em;
+  margin-left: 11.5em;
   z-index: 998;
   margin-top: -8px;
 }
@@ -123,13 +123,10 @@
   padding-left: 6.1em;
 }
 
-.puzzle-set-1{
-}
-
 .puzzle-set-1 > li{
   display: inline-block;
-  float: left;
-  width: 17%;
+  width: 18%;
+  margin-left: -4px;
 }
 
 .puzzle-set-1 > li > img{
