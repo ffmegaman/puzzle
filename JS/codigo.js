@@ -187,7 +187,6 @@ $(document).ready(function(){
     }
   };
 
-
   var levelObject = {
     nextLevel: function(){
       $('#puzzle-set-1').hide();

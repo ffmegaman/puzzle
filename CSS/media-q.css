@@ -5,7 +5,6 @@
     font-size: 5em;
   }
 
-
 }
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
@@ -102,13 +101,13 @@
     margin-top: 1.6em;
   }
 
-
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
 
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
 @media (max-width: 600px){  /*MOBILE*/
   #main_logo{
+    margin-left: 1em;
     font-size: 3em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
@@ -171,7 +170,7 @@
   }
 
   #your-status{
-    padding-left: 2em;
+    padding-left: 5.8em;
     margin-top: -2em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
@@ -180,7 +179,7 @@
   }
 
   #puzzle-set-2{
-    margin-left: -3.5em;
+    margin: 0 auto;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -188,7 +187,7 @@
   }
 
   .level-set{
-    margin-left: -0.7em;
+    margin-left: -3;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -196,7 +195,7 @@
   }
 
   #puzzle-set-1{
-    margin-left: -5.9em;
+    margin-left: -5em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -232,7 +231,7 @@
   #about-trottier{
     width: 100px;
     height: 50px;
-    margin-left: 75px;
+    margin-left: 113px;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -256,7 +255,10 @@
     margin-left: 2em;
   }
 
-
+  .menu-set{
+    float: left;
+    margin-left: 4.6em;
+  }
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
