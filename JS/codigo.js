@@ -73,13 +73,18 @@ $(document).ready(function(){
     $('.red').effect("pulsate", 3000)
   });
 
-  $('#your-status').hover(function(){
-    $('#upon-completion').fadeIn(1080,function(){
-      $('#upon-completion').animate({
-        "display":"block"
-      });
-    });
+
+  $('.close-button').on('click', function(){
+    $('.upon-completion').fadeOut('slow');
   });
+
+ $('#your-status').hover(function(){
+   $('.upon-completion').fadeIn(1080,function(){
+     $('.upon-completion').animate({
+       "display":"block"
+     });
+   });
+ });
 
   // ========== Shuffle Codes Below this Point ===============//
 
@@ -231,3 +236,5 @@ $(document).ready(function(){
 
   $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
 });
+
+

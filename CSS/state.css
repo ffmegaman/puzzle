@@ -153,14 +153,29 @@
   transition:.1s;
 }
 
+.close_button{
+  float:right;
+  margin:5%;
+  cursor:pointer;
+}
 
-#upon-completion{
+.upon-completion{
+  border: 1px solid;
+  color: #B70D19;
+  font-family: 'Lobster', cursive;
+  font-size: 1.5em;
   width: 80%;
-  height: 20em;
+  height: 10em;
   background-color: white;
-  margin-top: 6em;
-  margin-left: 8.5em;
+  margin-top: 3em;
+  margin-left: 6em;
   display: none;
+  padding-bottom: 5%;
   position: fixed;
+  text-align:center;
+}
+
+.upon-completion > p{
+  padding-top: 5em;
 }
 
