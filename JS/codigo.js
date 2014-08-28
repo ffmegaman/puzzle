@@ -176,6 +176,8 @@ $(document).ready(function(){
         }, 5000);
       };
     },
+
+
     runTime: function(gameRecord){
       timeObject.messages();
       if(timeObject.stopTime){
