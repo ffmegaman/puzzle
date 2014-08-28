@@ -121,6 +121,8 @@ $(document).ready(function(){
   function GameRecord() {
     this.gameOneTime = 0;
     this.gameTwoTime = 0;
+    this.gameOneIQ = 'kid';
+    this.gameTwoIQ = 'kid';
   }
 
   var game = new GameRecord();
@@ -139,7 +141,7 @@ $(document).ready(function(){
         return mins + ":" + seconds;
       }
     },
-    messages: function(){
+    messages: function(gameRecord){
       var title;
       switch(timeObject.currentSeconds){
         case 30:
@@ -166,12 +168,17 @@ $(document).ready(function(){
         setTimeout(function(){
           $("#messages").empty();
         }, 5000);
+        if(currentLevel === '#puzzle-set-1') {
+          game.gameOneIQ = title;
+        }
+        else{
+          game.gameTwoIQ = title;
+        }
       }
     },
 
-
     runTime: function(gameRecord){
-      timeObject.messages();
+      timeObject.messages(gameRecord);
       if(timeObject.stopTime){
         timeObject.currentSeconds -= 1; // Adjust 1 sec time difference
         if (currentLevel == '#puzzle-set-1') {
