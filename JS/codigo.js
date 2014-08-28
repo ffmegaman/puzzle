@@ -1,3 +1,4 @@
+// Shows the main PuzzleBox
 $(document).ready(function(){
   $('#puzzle-start, #play_button').click(function(){
     $('#main-puzzle-box').show(function(){
@@ -7,17 +8,16 @@ $(document).ready(function(){
       },'fast');
     });
   });
-
+// Shows the AboutBox
   $('#click-about').click(function(){
     $('#main-about-box').show(function(){
       $(this).click().animate({
-       // "height":"35.9em",
        "display":"block",
        "float":"left"
       },'slow');
     });
   });
-
+// Shows content inside the AboutBox
   $('#click-about').click(function(){
     $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
       $(this).click().animate({
@@ -25,34 +25,9 @@ $(document).ready(function(){
       });
     });
   });
-
+// Blur the image behind the AboutBox
   $('#click-about').click(function(){
     $('#main-puzzle-box').blur();
-  });
-
-  $('.go-back').click(function(){
-    $('#main-about-box').fadeOut('slow');
-  });
-
-
-  $('#main_logo').on('click', function(){
-    $('#main-puzzle-box').fadeOut('slow');
-  });
-
-  $('#play_button, #puzzle-start, #click-about').click(function(){
-    $('#main-header').animate({
-      "opacity":"1"
-    }, 'fast');
-  });
-
-  $('#play_button, #puzzle-start').click(function(){
-    $('#your-status').slideToggle("fast", function(){
-      $('#your-status').animate({
-        "width":"18%",
-        "opacity":"1",
-        "z-index":"998"
-      }, 'fast');
-    });
   });
 
   $('#click-about').click(function(){
@@ -70,26 +45,33 @@ $(document).ready(function(){
     $('#puzzle-set-2').removeClass('blur');
   });
 
-  // $('#click-about').click(function(){
-  //   $('.level-set').hide();
-  // });
-
-  // $('.go-back').click(function(){
-  //   $('.level-set').show('slow');
-  // });
-
-  $('#main_logo').on('click', function(){
-    $('#your-status').fadeOut();
+// hides the AboutBox
+  $('.go-back').click(function(){
+    $('#main-about-box').effect("drop" ,'slow');
   });
 
+// hides the PuzzleBox
+  $('#main_logo').on('click', function(){
+    $('#main-puzzle-box').effect("drop" ,'slow');
+  });
 
-//  $('#puzzle-set-1').sortable();
-//  $('#puzzle-set-2').sortable();
+// hides and shows the timer
+  $('#play_button, #puzzle-start').click(function(){
+    $('#your-status').slideToggle("fast", function(){
+      $('#your-status').effect("pulsate", 'fast');
+    });
+  });
+// hides the timer along with the PuzzleBox
+  $('#main_logo').on('click', function(){
+    $('#your-status').fadeOut('fast');
+  });
 
-  // This hides the puzzle set
+// This hides the puzzle set
   $('#puzzle-set-2').hide();
 
-
+  setInterval(function(){
+    $('.red').effect("pulsate", 3000)
+  });
 
   // ========== Shuffle Codes Below this Point ===============//
 
@@ -101,19 +83,19 @@ $(document).ready(function(){
 
   function insertShuffled(puzzleSet) {
     var pieces = $(puzzleSet + '> li');
-    $(puzzleSet).empty();
-    $.each(shuffleArray(pieces), function(index, piece){
+      $(puzzleSet).empty();
+      $.each(shuffleArray(pieces), function(index, piece){
       $(puzzleSet).append(piece);
     });
-  }
+  };
 
   $('.start-button').on('click', function(){
-    insertShuffled(currentLevel);
+  insertShuffled(currentLevel);
     $(this).hide();
-    $('.shuffle-button').css({'display': 'inline-block'});
-  });
+      $('.shuffle-button').css({'display': 'inline-block'});
+    });
   $('.shuffle-button').on('click', function(){
-    insertShuffled(currentLevel);
+  insertShuffled(currentLevel);
   });
 
   // ========== Game Codes Below This Point ===============//
@@ -208,7 +190,6 @@ $(document).ready(function(){
       }
     }
   };
-
 
   var levelObject = {
     nextLevel: function(){
