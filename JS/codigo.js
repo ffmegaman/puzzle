@@ -184,6 +184,7 @@ $(document).ready(function(){
     runTime: function(gameRecord){
       timeObject.messages();
       if(timeObject.stopTime){
+        timeObject.currentSeconds -= 1; // Adjust 1 sec time difference
         if (currentLevel == '#puzzle-set-1') {
           gameRecord.gameOneTime = timeObject.currentTime();
         }
