@@ -231,4 +231,10 @@ $(document).ready(function(){
   $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
 });
 
+ /* function show(){
+  document.getElementById('popup').style.display='block';
+  }
+  function hide(){
+  document.getElementById('popup').style.display='none';
+  }*/
 
