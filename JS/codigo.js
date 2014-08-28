@@ -200,13 +200,14 @@ $(document).ready(function(){
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
-      $('#puzzle-set-1 li img').each(function(){
+      $( currentLevel + ' li img').each(function(){
         unsortedPieces.push($(this).attr('src'));
       });
-      $('#puzzle-set-1 li img').each(function(){
+      $(currentLevel + ' li img').each(function(){
         originalPieces.push($(this).attr('src'));
       });
       var sortedPieces = unsortedPieces.sort();
+      console.log(sortedPieces.join() == originalPieces.join());
       if (sortedPieces.join() == originalPieces.join()){
         currentLevel = '#puzzle-set-2';
         levelObject.nextLevel();
