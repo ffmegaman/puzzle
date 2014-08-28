@@ -99,6 +99,25 @@
     margin-top: 1.6em;
   }
 
+  .upon-completion{
+    width: 80%;
+    height: 15em;
+    margin-left: 3.4em;
+    margin-top: 1em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
+  .close-button{
+    width: 20%;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
 
@@ -193,7 +212,7 @@
   }
 
   #puzzle-set-1{
-    margin-left: -5em;
+    margin-left: -5.5em;
     -webkit-transition: 1s ease;
     -moz-transition: 1s ease;
     -o-transition: 1s ease;
@@ -257,6 +276,25 @@
     float: left;
     margin-left: 3.5em;
   }
+
+  .upon-completion{
+    width: 80%;
+    height: 10em;
+    margin-left: 1.3em;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
+  }
+
+  .close-button{
+    width: 40%;
+    -webkit-transition: 1s ease;
+    -moz-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;v
+  }
+
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
