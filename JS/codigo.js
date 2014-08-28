@@ -173,16 +173,17 @@ $(document).ready(function(){
     },
     runTime: function(gameRecord){
       timeObject.messages();
-      if(timeObject.stopTime === false){
+      if(timeObject.stopTime){
+        gameRecord.totalTime = timeObject.currentTime();
+        this.currentSeconds = 0;
+        $('#timer span').text(timeObject.currentTime());
+      }
+      else{
         window.setTimeout(function(){
           timeObject.currentSeconds += 1;
           $('#timer span').text(timeObject.currentTime());
           timeObject.runTime(gameRecord);
         }, 1000);
-      }
-      else{
-        gameRecord.totalTime = timeObject.currentTime();
-        this.currentSeconds = 0;
       }
     }
   };
@@ -190,6 +191,7 @@ $(document).ready(function(){
 
   var levelObject = {
     nextLevel: function(){
+      timeObject.stopTime = true;
       $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
@@ -221,9 +223,4 @@ $(document).ready(function(){
   $('.time-start').on('click', startGame1);
 
   $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
-
-
 });
-
-
-
