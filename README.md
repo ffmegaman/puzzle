@@ -14,5 +14,6 @@ Finish both puzzles quickly and you may become a PuzzleNerd champion!
 Take too long and your accused of having a lowered IQ!  Muahahahahah!
 
 *but of course we kid, we kid.*
-
+---------------------------------
+<img src="img/think.jpg">
 ###Enjoy!
