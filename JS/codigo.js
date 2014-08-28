@@ -82,13 +82,17 @@ $(document).ready(function(){
     $('#your-status').fadeOut();
   });
 
-  $('#puzzle-set-1').sortable();
-  $('#puzzle-set-2').sortable();
+
+//  $('#puzzle-set-1').sortable();
+//  $('#puzzle-set-2').sortable();
 
   // This hides the puzzle set
   $('#puzzle-set-2').hide();
 
-  var currentLevel = '#puzzle-set-1';
+
+
+  // ========== Shuffle Codes Below this Point ===============//
+
 
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -112,14 +116,20 @@ $(document).ready(function(){
     insertShuffled(currentLevel);
   });
 
+  // ========== Game Codes Below This Point ===============//
+
   // Upon new game, instantiate a new GameRecord.
   // Start timer with timeObject.runTime(<instance variable of GameRecord>)
   // For example, if you used: var game = new GameRecord;
   // Start timer like this: timeObject.runTime(game);
   // Stop timer with timeObject.stopTime = true;
   function GameRecord() {
-    this.totalTime = 0;
+    this.gameOneTime = 0;
+    this.gameTwoTime = 0;
   }
+
+  var game = new GameRecord();
+  var currentLevel = '#puzzle-set-1';
 
   var timeObject = {
     stopTime: false,
@@ -174,9 +184,19 @@ $(document).ready(function(){
     runTime: function(gameRecord){
       timeObject.messages();
       if(timeObject.stopTime){
-        gameRecord.totalTime = timeObject.currentTime();
+        if (currentLevel == '#puzzle-set-1') {
+          gameRecord.gameOneTime = timeObject.currentTime();
+        }
+        else {
+          gameRecord.gameTwoTime = timeObject.currentTime();
+        }
+        currentLevel = '#puzzle-set-2';
+        levelObject.nextLevel();
+        $('#average-time span').text(gameRecord.gameOneTime);
         this.currentSeconds = 0;
         $('#timer span').text(timeObject.currentTime());
+        console.log(gameRecord);
+        timeObject.stopTime = false;
       }
       else{
         window.setTimeout(function(){
@@ -191,7 +211,6 @@ $(document).ready(function(){
 
   var levelObject = {
     nextLevel: function(){
-      timeObject.stopTime = true;
       $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
@@ -200,28 +219,25 @@ $(document).ready(function(){
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
-      $( currentLevel + ' li img').each(function(){
+      $(currentLevel + ' li img').each(function(){
         unsortedPieces.push($(this).attr('src'));
       });
       $(currentLevel + ' li img').each(function(){
         originalPieces.push($(this).attr('src'));
       });
       var sortedPieces = unsortedPieces.sort();
-      console.log(sortedPieces.join() == originalPieces.join());
       if (sortedPieces.join() == originalPieces.join()){
-        currentLevel = '#puzzle-set-2';
-        levelObject.nextLevel();
+        timeObject.stopTime = true;
       }
     }
   }
 
-  function startGame1(){
-    timeObject.runTime(function(){
-      var game1 = new GameRecord();
-    });
+  function startGame(){
+    $(currentLevel).sortable();
+    timeObject.runTime(game);
   }
 
-  $('.time-start').on('click', startGame1);
+  $('.time-start').on('click', startGame);
 
   $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
 });
