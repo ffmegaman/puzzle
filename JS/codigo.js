@@ -8,6 +8,7 @@ $(document).ready(function(){
       },'fast');
     });
   });
+
 // Shows the AboutBox
   $('#click-about').click(function(){
     $('#main-about-box').show(function(){
@@ -17,6 +18,7 @@ $(document).ready(function(){
       },'slow');
     });
   });
+
 // Shows content inside the AboutBox
   $('#click-about').click(function(){
     $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
@@ -25,6 +27,7 @@ $(document).ready(function(){
       });
     });
   });
+
 // Blur the image behind the AboutBox
   $('#click-about').click(function(){
     $('#main-puzzle-box').blur();
@@ -61,6 +64,7 @@ $(document).ready(function(){
       $('#your-status').effect("pulsate", 'fast');
     });
   });
+
 // hides the timer along with the PuzzleBox
   $('#main_logo').on('click', function(){
     $('#your-status').fadeOut('fast');
@@ -69,15 +73,17 @@ $(document).ready(function(){
 // This hides the puzzle set
   $('#puzzle-set-2').hide();
 
+// You are the future infinite effect
   setInterval(function(){
     $('.red').effect("pulsate", 3000)
   });
 
-
+// Hides the completion message after the ned of the game
   $('.close-button').on('click', function(){
     $('.upon-completion').fadeOut('slow');
   });
 
+// this is temporary
  $('#your-status').hover(function(){
    $('.upon-completion').fadeIn(1080,function(){
      $('.upon-completion').animate({
@@ -85,9 +91,7 @@ $(document).ready(function(){
      });
    });
  });
-
   // ========== Shuffle Codes Below this Point ===============//
-
 
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -112,7 +116,6 @@ $(document).ready(function(){
   });
 
   // ========== Game Codes Below This Point ===============//
-
   // Upon new game, instantiate a new GameRecord.
   // Start timer with timeObject.runTime(<instance variable of GameRecord>)
   // For example, if you used: var game = new GameRecord;
@@ -205,6 +208,7 @@ $(document).ready(function(){
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
     },
+
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
