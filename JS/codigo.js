@@ -86,12 +86,6 @@ $(document).ready(function(){
    });
  });
 
- $('.upon-completion').hover(function(){
-  $('.upon-completion').animate({
-    "opacity":"1"
-  });
- });
-
   // ========== Shuffle Codes Below this Point ===============//
 
 
