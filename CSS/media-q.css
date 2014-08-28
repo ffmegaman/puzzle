@@ -287,6 +287,10 @@
     transition: 1s ease;
   }
 
+  .upon-completion > p{
+    font-size: 15px;
+  }
+
   .close-button{
     width: 40%;
     -webkit-transition: 1s ease;

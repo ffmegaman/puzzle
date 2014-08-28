@@ -44,17 +44,14 @@ $(document).ready(function(){
   $('.go-back').click(function(){
     $('#puzzle-set-2').removeClass('blur');
   });
-
 // hides the AboutBox
   $('.go-back').click(function(){
     $('#main-about-box').effect("drop" ,'slow');
   });
-
 // hides the PuzzleBox
   $('#main_logo').on('click', function(){
     $('#main-puzzle-box').effect("drop" ,'slow');
   });
-
 // hides and shows the timer
   $('#play_button, #puzzle-start').click(function(){
     $('#your-status').slideToggle("fast", function(){
@@ -65,19 +62,17 @@ $(document).ready(function(){
   $('#main_logo').on('click', function(){
     $('#your-status').fadeOut('fast');
   });
-
 // This hides the puzzle set
   $('#puzzle-set-2').hide();
-
+// You are the future infinite effect
   setInterval(function(){
     $('.red').effect("pulsate", 3000)
   });
-
-
+// Hides the completion message after the ned of the game
   $('.close-button').on('click', function(){
     $('.upon-completion').fadeOut('slow');
   });
-
+// this is temporary
  $('#your-status').hover(function(){
    $('.upon-completion').fadeIn(1080,function(){
      $('.upon-completion').animate({
@@ -85,9 +80,7 @@ $(document).ready(function(){
      });
    });
  });
-
   // ========== Shuffle Codes Below this Point ===============//
-
 
   function shuffleArray(o){
       for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -112,7 +105,6 @@ $(document).ready(function(){
   });
 
   // ========== Game Codes Below This Point ===============//
-
   // Upon new game, instantiate a new GameRecord.
   // Start timer with timeObject.runTime(<instance variable of GameRecord>)
   // For example, if you used: var game = new GameRecord;
@@ -121,6 +113,8 @@ $(document).ready(function(){
   function GameRecord() {
     this.gameOneTime = 0;
     this.gameTwoTime = 0;
+    this.gameOneIQ = 'kid';
+    this.gameTwoIQ = 'kid';
   }
 
   var game = new GameRecord();
@@ -139,7 +133,7 @@ $(document).ready(function(){
         return mins + ":" + seconds;
       }
     },
-    messages: function(){
+    messages: function(gameRecord){
       var title;
       switch(timeObject.currentSeconds){
         case 30:
@@ -166,19 +160,28 @@ $(document).ready(function(){
         setTimeout(function(){
           $("#messages").empty();
         }, 5000);
+        if(currentLevel === '#puzzle-set-1') {
+          game.gameOneIQ = title;
+        }
+        else{
+          game.gameTwoIQ = title;
+        }
       }
     },
 
-
     runTime: function(gameRecord){
-      timeObject.messages();
+      timeObject.messages(gameRecord);
       if(timeObject.stopTime){
         timeObject.currentSeconds -= 1; // Adjust 1 sec time difference
         if (currentLevel == '#puzzle-set-1') {
           gameRecord.gameOneTime = timeObject.currentTime();
+          $('#p1-time-stat').text(gameRecord.gameOneTime);
+          $('#p1-iq-stat').text(gameRecord.gameOneIQ);
         }
         else {
           gameRecord.gameTwoTime = timeObject.currentTime();
+          $('#p2-time-stat').text(gameRecord.gameTwoTime);
+          $('#p2-iq-stat').text(gameRecord.gameTwoIQ);
         }
         currentLevel = '#puzzle-set-2';
         levelObject.nextLevel();
@@ -205,6 +208,7 @@ $(document).ready(function(){
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
     },
+
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
