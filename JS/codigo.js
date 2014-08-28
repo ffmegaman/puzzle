@@ -73,6 +73,14 @@ $(document).ready(function(){
     $('.red').effect("pulsate", 3000)
   });
 
+  $('#your-status').hover(function(){
+    $('#upon-completion').fadeIn(1080,function(){
+      $('#upon-completion').animate({
+        "display":"block"
+      });
+    });
+  });
+
   // ========== Shuffle Codes Below this Point ===============//
 
 
