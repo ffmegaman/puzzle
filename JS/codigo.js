@@ -183,9 +183,13 @@ $(document).ready(function(){
         timeObject.currentSeconds -= 1; // Adjust 1 sec time difference
         if (currentLevel == '#puzzle-set-1') {
           gameRecord.gameOneTime = timeObject.currentTime();
+          $('#p1-time-stat').text(gameRecord.gameOneTime);
+          $('#p1-iq-stat').text(gameRecord.gameOneIQ);
         }
         else {
           gameRecord.gameTwoTime = timeObject.currentTime();
+          $('#p2-time-stat').text(gameRecord.gameTwoTime);
+          $('#p2-iq-stat').text(gameRecord.gameTwoIQ);
         }
         currentLevel = '#puzzle-set-2';
         levelObject.nextLevel();
