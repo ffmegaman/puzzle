@@ -8,7 +8,6 @@ $(document).ready(function(){
       },'fast');
     });
   });
-
 // Shows the AboutBox
   $('#click-about').click(function(){
     $('#main-about-box').show(function(){
@@ -18,7 +17,6 @@ $(document).ready(function(){
       },'slow');
     });
   });
-
 // Shows content inside the AboutBox
   $('#click-about').click(function(){
     $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
@@ -27,7 +25,6 @@ $(document).ready(function(){
       });
     });
   });
-
 // Blur the image behind the AboutBox
   $('#click-about').click(function(){
     $('#main-puzzle-box').blur();
@@ -47,42 +44,34 @@ $(document).ready(function(){
   $('.go-back').click(function(){
     $('#puzzle-set-2').removeClass('blur');
   });
-
 // hides the AboutBox
   $('.go-back').click(function(){
     $('#main-about-box').effect("drop" ,'slow');
   });
-
 // hides the PuzzleBox
   $('#main_logo').on('click', function(){
     $('#main-puzzle-box').effect("drop" ,'slow');
   });
-
 // hides and shows the timer
   $('#play_button, #puzzle-start').click(function(){
     $('#your-status').slideToggle("fast", function(){
       $('#your-status').effect("pulsate", 'fast');
     });
   });
-
 // hides the timer along with the PuzzleBox
   $('#main_logo').on('click', function(){
     $('#your-status').fadeOut('fast');
   });
-
 // This hides the puzzle set
   $('#puzzle-set-2').hide();
-
 // You are the future infinite effect
   setInterval(function(){
     $('.red').effect("pulsate", 3000)
   });
-
 // Hides the completion message after the ned of the game
   $('.close-button').on('click', function(){
     $('.upon-completion').fadeOut('slow');
   });
-
 // this is temporary
  $('#your-status').hover(function(){
    $('.upon-completion').fadeIn(1080,function(){
@@ -171,7 +160,6 @@ $(document).ready(function(){
         }, 5000);
       }
     },
-
 
     runTime: function(gameRecord){
       timeObject.messages();
