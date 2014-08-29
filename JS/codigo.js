@@ -215,11 +215,8 @@ $(document).ready(function(){
 
   var levelObject = {
     reset: function(){
-      currentLevel = '#puzzle-set-1';
-      $('#puzzle-set-1').show();
-      $('#puzzle-set-2').hide();
-      $('#main-puzzle-box').hide();
-      $('#your-status').fadeOut('fast');
+      localStorage.clear();
+      location.reload();
     },
     complete: function(){
      $('.upon-completion').fadeIn(1080,function(){
