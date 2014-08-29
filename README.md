@@ -16,4 +16,4 @@ Take too long and you're accused of having a lowered IQ!  Muahahahahah!
 *but of course we kid, we kid.*
 ---------------------------------
 <img src="img/think.jpg">
-###Enjoy!
+###Enjoy!!!
