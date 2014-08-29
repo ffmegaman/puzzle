@@ -71,6 +71,7 @@ $(document).ready(function(){
 // Hides the completion message after the ned of the game
   $('.close-button').on('click', function(){
     $('.upon-completion').fadeOut('slow');
+    levelObject.reset();
   });
 // this is temporary
  // $('#your-status').hover(function(){
@@ -113,13 +114,14 @@ $(document).ready(function(){
   function GameRecord() {
     this.gameOneTime = 0;
     this.gameTwoTime = 0;
-    this.gameOneIQ = 'kid';
-    this.gameTwoIQ = 'kid';
+    this.gameOneIQ = 'Kid';
+    this.gameTwoIQ = 'Kid';
   }
 
   var game = new GameRecord();
   var currentLevel = '#puzzle-set-1';
 
+  //Timer
   var timeObject = {
     stopTime: false,
     currentSeconds: 0,
@@ -133,9 +135,14 @@ $(document).ready(function(){
         return mins + ":" + seconds;
       }
     },
+
+    //Heckler Message function
     messages: function(gameRecord){
       var title;
       switch(timeObject.currentSeconds){
+        case 1:
+          title = "Kid";
+          break;
         case 30:
           title = "Toddler";
           break;
@@ -156,10 +163,12 @@ $(document).ready(function(){
       }
       if(title !== "none"){
         $("#iq-level span").fadeIn().text(title);
-        $("#messages").slideDown("slow").text("You IQ has lowered to " + title + " status!");
-        setTimeout(function(){
-          $("#messages").empty();
-        }, 5000);
+        if(title !== 'Kid'){
+          $("#messages").slideDown("slow").text("You IQ has lowered to " + title + " status!");
+          setTimeout(function(){
+            $("#messages").empty();
+          }, 5000);
+        }
         if(currentLevel === '#puzzle-set-1') {
           game.gameOneIQ = title;
         }
@@ -187,11 +196,11 @@ $(document).ready(function(){
           levelObject.complete();
         }
         currentLevel = '#puzzle-set-2';
-        levelObject.nextLevel();
+        levelObject.nextLevel(gameRecord);
         $('#average-time span').text(gameRecord.gameOneTime);
         this.currentSeconds = 0;
         $('#timer span').text(timeObject.currentTime());
-        console.log(gameRecord);
+        $('#iq-level span').text('kid');
         timeObject.stopTime = false;
       }
       else{
@@ -205,18 +214,28 @@ $(document).ready(function(){
   };
 
   var levelObject = {
-    complete: function(){
-     $('.upon-completion').fadeIn(1080,function(){
-       $('.upon-completion').animate({
-         "display":"block"
-       });
-     });
+    reset: function(){
+      localStorage.clear();
+      location.reload();
     },
-    nextLevel: function(){
+    clear: function(){
+      localStorage.clear();
+    },
+    complete: function(){
+      $('.upon-completion').fadeIn(1080,function(){
+        $('.upon-completion').animate({
+          "display":"block"
+        });
+      });
+      $('#p1-time-stat').text(gameRecord.gameOneTime);
+      $('#p1-iq-stat').text(gameRecord.gameOneIQ);
+    },
+    nextLevel: function(gameRecord){
       $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
+      storageObject.save(gameRecord)
     },
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
@@ -231,6 +250,27 @@ $(document).ready(function(){
       if (sortedPieces.join() == originalPieces.join()){
         timeObject.stopTime = true;
       }
+    },
+    levelCheck: function(){
+      if(localStorage.length > 0){
+        currentLevel = '#puzzle-set-2';
+        $('#puzzle-set-1').hide();
+        $('#puzzle-set-2').show();
+        game = JSON.parse(localStorage.getItem('game'));
+        $('#average-time span').text(game.gameOneTime);
+        $('#p1-time-stat').text(game.gameOneTime);
+        $('#p1-iq-stat').text(game.gameOneIQ);
+      }
+    }
+  }
+
+  var storageObject = {
+    save: function(gameRecord) {
+      var stringRecord = JSON.stringify(gameRecord);
+      localStorage.setItem('game', stringRecord);
+    },
+    lastGame: function() {
+      JSON.parse(localStorage.getItem('game'));
     }
   }
 
@@ -238,6 +278,10 @@ $(document).ready(function(){
     $(currentLevel).sortable();
     timeObject.runTime(game);
   }
+
+  $('#play_button').on('click', levelObject.levelCheck());
+
+  $('.reset-level').on('click', levelObject.reset);
 
   $('.time-start').on('click', startGame);
 
