@@ -201,7 +201,6 @@ $(document).ready(function(){
         this.currentSeconds = 0;
         $('#timer span').text(timeObject.currentTime());
         $('#iq-level span').text('kid');
-        console.log(gameRecord);
         timeObject.stopTime = false;
       }
       else{
