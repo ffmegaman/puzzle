@@ -71,6 +71,7 @@ $(document).ready(function(){
 // Hides the completion message after the ned of the game
   $('.close-button').on('click', function(){
     $('.upon-completion').fadeOut('slow');
+    levelObject.reset();
   });
 // this is temporary
  // $('#your-status').hover(function(){
@@ -113,8 +114,8 @@ $(document).ready(function(){
   function GameRecord() {
     this.gameOneTime = 0;
     this.gameTwoTime = 0;
-    this.gameOneIQ = 'kid';
-    this.gameTwoIQ = 'kid';
+    this.gameOneIQ = 'Kid';
+    this.gameTwoIQ = 'Kid';
   }
 
   var game = new GameRecord();
@@ -195,7 +196,7 @@ $(document).ready(function(){
           levelObject.complete();
         }
         currentLevel = '#puzzle-set-2';
-        levelObject.nextLevel();
+        levelObject.nextLevel(gameRecord);
         $('#average-time span').text(gameRecord.gameOneTime);
         this.currentSeconds = 0;
         $('#timer span').text(timeObject.currentTime());
@@ -208,6 +209,7 @@ $(document).ready(function(){
           timeObject.currentSeconds += 1;
           $('#timer span').text(timeObject.currentTime());
           timeObject.runTime(gameRecord);
+          console.log(gameRecord);
         }, 1000);
       }
     }
@@ -218,18 +220,24 @@ $(document).ready(function(){
       localStorage.clear();
       location.reload();
     },
-    complete: function(){
-     $('.upon-completion').fadeIn(1080,function(){
-       $('.upon-completion').animate({
-         "display":"block"
-       });
-     });
+    clear: function(){
+      localStorage.clear();
     },
-    nextLevel: function(){
+    complete: function(){
+      $('.upon-completion').fadeIn(1080,function(){
+        $('.upon-completion').animate({
+          "display":"block"
+        });
+      });
+      $('#p1-time-stat').text(gameRecord.gameOneTime);
+      $('#p1-iq-stat').text(gameRecord.gameOneIQ);
+    },
+    nextLevel: function(gameRecord){
       $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
+      storageObject.save(gameRecord)
     },
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
@@ -244,6 +252,27 @@ $(document).ready(function(){
       if (sortedPieces.join() == originalPieces.join()){
         timeObject.stopTime = true;
       }
+    },
+    levelCheck: function(){
+      if(localStorage.length > 0){
+        currentLevel = '#puzzle-set-2';
+        $('#puzzle-set-1').hide();
+        $('#puzzle-set-2').show();
+        game = JSON.parse(localStorage.getItem('game'));
+        $('#average-time span').text(game.gameOneTime);
+        $('#p1-time-stat').text(game.gameOneTime);
+        $('#p1-iq-stat').text(game.gameOneIQ);
+      }
+    }
+  }
+
+  var storageObject = {
+    save: function(gameRecord) {
+      var stringRecord = JSON.stringify(gameRecord);
+      localStorage.setItem('game', stringRecord);
+    },
+    lastGame: function() {
+      JSON.parse(localStorage.getItem('game'));
     }
   }
 
@@ -251,6 +280,8 @@ $(document).ready(function(){
     $(currentLevel).sortable();
     timeObject.runTime(game);
   }
+
+  $('#play_button').on('click', levelObject.levelCheck());
 
   $('.reset-level').on('click', levelObject.reset);
 
