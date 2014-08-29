@@ -2,7 +2,7 @@
 
 ###Authored by Emmanual Santos, Philip Nguyen, and Kevin Trottier
 
-The creation of our lovely interactive website challenged us all in its creation and we hope you enjoy it.
+The creation of our lovely interactive website was a great challenge for us all, but was a pleasure to make.
 
 ##So you wanna be a PuzzleNerd???
 
