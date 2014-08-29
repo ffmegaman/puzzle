@@ -118,6 +118,7 @@ $(document).ready(function(){
     this.gameTwoIQ = 'Kid';
   }
 
+  // Global Variables
   var game = new GameRecord();
   var currentLevel = '#puzzle-set-1';
 
@@ -178,6 +179,7 @@ $(document).ready(function(){
       }
     },
 
+  // All time related methods
     runTime: function(gameRecord){
       timeObject.messages(gameRecord);
       if(timeObject.stopTime){
@@ -213,6 +215,7 @@ $(document).ready(function(){
     }
   };
 
+  // All level control related methods
   var levelObject = {
     reset: function(){
       localStorage.clear();
@@ -264,6 +267,7 @@ $(document).ready(function(){
     }
   }
 
+  // All storage related methods
   var storageObject = {
     save: function(gameRecord) {
       var stringRecord = JSON.stringify(gameRecord);
@@ -274,16 +278,20 @@ $(document).ready(function(){
     }
   }
 
-  function startGame(){
-    $(currentLevel).sortable();
-    timeObject.runTime(game);
+  // Master game object
+  var gameMaster = {
+    startGame: function(){
+      $(currentLevel).sortable();
+      timeObject.runTime(game);
+    }
   }
+
 
   $('#play_button').on('click', levelObject.levelCheck());
 
   $('.reset-level').on('click', levelObject.reset);
 
-  $('.time-start').on('click', startGame);
+  $('.time-start').on('click', gameMaster.startGame);
 
   $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
 });
