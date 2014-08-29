@@ -1,6 +1,6 @@
 #Puzzle
 
-###Authored by Emmanual Santos, Philip Nguyen, and Kevin Trottier
+###Authored by Emmanuel Santos, Philip Nguyen, and Kevin Trottier
 
 The creation of our lovely interactive website was a great challenge for us all, but was a pleasure to make.
 
