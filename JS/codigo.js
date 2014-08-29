@@ -136,6 +136,9 @@ $(document).ready(function(){
     messages: function(gameRecord){
       var title;
       switch(timeObject.currentSeconds){
+        case 1:
+          title = "Kid";
+          break;
         case 30:
           title = "Toddler";
           break;
@@ -156,10 +159,12 @@ $(document).ready(function(){
       }
       if(title !== "none"){
         $("#iq-level span").fadeIn().text(title);
-        $("#messages").slideDown("slow").text("You IQ has lowered to " + title + " status!");
-        setTimeout(function(){
-          $("#messages").empty();
-        }, 5000);
+        if(title !== 'Kid'){
+          $("#messages").slideDown("slow").text("You IQ has lowered to " + title + " status!");
+          setTimeout(function(){
+            $("#messages").empty();
+          }, 5000);
+        }
         if(currentLevel === '#puzzle-set-1') {
           game.gameOneIQ = title;
         }
@@ -206,6 +211,13 @@ $(document).ready(function(){
   };
 
   var levelObject = {
+    reset: function(){
+      currentLevel = '#puzzle-set-1';
+      $('#puzzle-set-1').show();
+      $('#puzzle-set-2').hide();
+      $('#main-puzzle-box').hide();
+      $('#your-status').fadeOut('fast');
+    },
     complete: function(){
      $('.upon-completion').fadeIn(1080,function(){
        $('.upon-completion').animate({
@@ -239,6 +251,8 @@ $(document).ready(function(){
     $(currentLevel).sortable();
     timeObject.runTime(game);
   }
+
+  $('.reset-level').on('click', levelObject.reset);
 
   $('.time-start').on('click', startGame);
 

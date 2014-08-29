@@ -118,6 +118,10 @@
     transition: 1s ease;
   }
 
+  .reset-level{
+    margin-left: 8em;
+  }
+
 }
 /*TABLET*//*TABLET*//*TABLET*//*TABLET*/
 
@@ -299,6 +303,9 @@
     transition: 1s ease;v
   }
 
+  .reset-level{
+    margin-top: 7em;
+  }
 
 }
 /*MOBILE*//*MOBILE*//*MOBILE*//*MOBILE*/
