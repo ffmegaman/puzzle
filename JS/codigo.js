@@ -120,6 +120,7 @@ $(document).ready(function(){
   var game = new GameRecord();
   var currentLevel = '#puzzle-set-1';
 
+  //Timer
   var timeObject = {
     stopTime: false,
     currentSeconds: 0,
@@ -133,6 +134,8 @@ $(document).ready(function(){
         return mins + ":" + seconds;
       }
     },
+
+    //Heckler Message function
     messages: function(gameRecord){
       var title;
       switch(timeObject.currentSeconds){
