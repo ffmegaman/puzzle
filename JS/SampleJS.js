@@ -1,4 +1,4 @@
-
+//Sample: Initial code / Refactored code
 
 messages: function(){
       if (timeObject.currentSeconds === 30) {
