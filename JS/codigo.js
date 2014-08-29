@@ -191,6 +191,7 @@ $(document).ready(function(){
         $('#average-time span').text(gameRecord.gameOneTime);
         this.currentSeconds = 0;
         $('#timer span').text(timeObject.currentTime());
+        $('#iq-level span').text('kid');
         console.log(gameRecord);
         timeObject.stopTime = false;
       }
