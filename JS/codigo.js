@@ -208,7 +208,6 @@ $(document).ready(function(){
           timeObject.currentSeconds += 1;
           $('#timer span').text(timeObject.currentTime());
           timeObject.runTime(gameRecord);
-          console.log(gameRecord);
         }, 1000);
       }
     }
