@@ -11,7 +11,7 @@ the pressure of a timer that will heckle your futile efforts.
 
 Finish both puzzles quickly and you may become a PuzzleNerd champion!
 
-Take too long and your accused of having a lowered IQ!  Muahahahahah!
+Take too long and you're accused of having a lowered IQ!  Muahahahahah!
 
 *but of course we kid, we kid.*
 ---------------------------------
