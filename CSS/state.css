@@ -118,6 +118,7 @@
 #puzzle-set-1 > li{
   display: inline-block;
   margin-left: -4px;
+  float: left;
   width: 19%;
 }
 
