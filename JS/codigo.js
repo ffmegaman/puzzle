@@ -1,109 +1,118 @@
 // Shows the main PuzzleBox
 $(document).ready(function(){
-  $('#puzzle-start, #play_button').click(function(){
-    $('#main-puzzle-box').show(function(){
-      $(this).click().animate({
-       "width":"100%",
-       "display":"block"
-      },'fast');
-    });
-  });
-// Shows the AboutBox
-  $('#click-about').click(function(){
-    $('#main-about-box').show(function(){
-      $(this).click().animate({
-       "display":"block",
-       "float":"left"
-      },'slow');
-    });
-  });
-// Shows content inside the AboutBox
-  $('#click-about').click(function(){
-    $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
-      $(this).click().animate({
-        "display":"block"
+  // Global Variables
+  var game = new GameRecord();
+  var currentLevel = '#puzzle-set-1';
+
+  // listeners for design elements
+  var designEvents = {
+    listen: function(){
+      $('#puzzle-start, #play_button').click(function(){
+        $('#main-puzzle-box').show(function(){
+          $(this).click().animate({
+           "width":"100%",
+           "display":"block"
+          },'fast');
+        });
       });
-    });
-  });
-// Blur the image behind the AboutBox
-  $('#click-about').click(function(){
-    $('#main-puzzle-box').blur();
-  });
+    // Shows the AboutBox
+      $('#click-about').click(function(){
+        $('#main-about-box').show(function(){
+          $(this).click().animate({
+           "display":"block",
+           "float":"left"
+          },'slow');
+        });
+      });
+    // Shows content inside the AboutBox
+      $('#click-about').click(function(){
+        $('#about-chino, #about-phillip, #about-trottier, #la-info').show(function(){
+          $(this).click().animate({
+            "display":"block"
+          });
+        });
+      });
+    // Blur the image behind the AboutBox
+      $('#click-about').click(function(){
+        $('#main-puzzle-box').blur();
+      });
 
-  $('#click-about').click(function(){
-    $('#puzzle-set-1').addClass('blur');
-  });
-  $('.go-back').click(function(){
-    $('#puzzle-set-1').removeClass('blur');
-  });
+      $('#click-about').click(function(){
+        $('#puzzle-set-1').addClass('blur');
+      });
+      $('.go-back').click(function(){
+        $('#puzzle-set-1').removeClass('blur');
+      });
 
-  $('#click-about').click(function(){
-    $('#puzzle-set-2').addClass('blur');
-  });
+      $('#click-about').click(function(){
+        $('#puzzle-set-2').addClass('blur');
+      });
 
-  $('.go-back').click(function(){
-    $('#puzzle-set-2').removeClass('blur');
-  });
-// hides the AboutBox
-  $('.go-back').click(function(){
-    $('#main-about-box').effect("drop" ,'slow');
-  });
-// hides the PuzzleBox
-  $('#main_logo').on('click', function(){
-    $('#main-puzzle-box').effect("drop" ,'slow');
-  });
-// hides and shows the timer
-  $('#play_button, #puzzle-start').click(function(){
-    $('#your-status').slideToggle("fast", function(){
-      $('#your-status').effect("pulsate", 'fast');
-    });
-  });
-// hides the timer along with the PuzzleBox
-  $('#main_logo').on('click', function(){
-    $('#your-status').fadeOut('fast');
-  });
-// This hides the puzzle set
-  $('#puzzle-set-2').hide();
-// You are the future infinite effect
-  setInterval(function(){
-    $('.red').effect("pulsate", 3000)
-  });
-// Hides the completion message after the ned of the game
-  $('.close-button').on('click', function(){
-    $('.upon-completion').fadeOut('slow');
-    levelObject.reset();
-  });
-// this is temporary
- // $('#your-status').hover(function(){
- //   $('.upon-completion').fadeIn(1080,function(){
- //     $('.upon-completion').animate({
- //       "display":"block"
- //     });
- //   });
- // });
-  // ========== Shuffle Codes Below this Point ===============//
-
-  function shuffleArray(o){
-      for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-      return o;
+      $('.go-back').click(function(){
+        $('#puzzle-set-2').removeClass('blur');
+      });
+    // hides the AboutBox
+      $('.go-back').click(function(){
+        $('#main-about-box').effect("drop" ,'slow');
+      });
+    // hides the PuzzleBox
+      $('#main_logo').on('click', function(){
+        $('#main-puzzle-box').effect("drop" ,'slow');
+      });
+    // hides and shows the timer
+      $('#play_button, #puzzle-start').click(function(){
+        $('#your-status').slideToggle("fast", function(){
+          $('#your-status').effect("pulsate", 'fast');
+        });
+      });
+    // hides the timer along with the PuzzleBox
+      $('#main_logo').on('click', function(){
+        $('#your-status').fadeOut('fast');
+      });
+    // This hides the puzzle set
+      $('#puzzle-set-2').hide();
+    // You are the future infinite effect
+      setInterval(function(){
+        $('.red').effect("pulsate", 3000)
+      });
+    // Hides the completion message after the ned of the game
+      $('.close-button').on('click', function(){
+        $('.upon-completion').fadeOut('slow');
+        levelObject.reset();
+      });
+    }
   }
 
-  function insertShuffled(puzzleSet) {
-    var pieces = $(puzzleSet + '> li');
-      $(puzzleSet).empty();
-      $.each(shuffleArray(pieces), function(index, piece){
-      $(puzzleSet).append(piece);
-    });
-  };
 
-  $('.start-button').on('click', function(){
-  insertShuffled(currentLevel);
-    $(this).hide();
-      $('.shuffle-button').css({'display': 'inline-block'});
-    });
-  $('.shuffle-button').on('click', function(){
-  insertShuffled(currentLevel);
-  });
+
+  // ========== Shuffle Codes Below this Point ===============//
+
+  var shuffleObject = {
+    shuffleArray: function(o){
+      for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+      return o;
+    },
+    insertShuffled: function(puzzleSet){
+      var pieces = $(puzzleSet + '> li');
+        $(puzzleSet).empty();
+        $.each(this.shuffleArray(pieces), function(index, piece){
+        $(puzzleSet).append(piece);
+      });
+    }
+  }
+
+  var shuffleEventListeners = {
+    listen: function(){
+      $('.start-button').on('click', function(){
+      shuffleObject.insertShuffled(currentLevel);
+        $(this).hide();
+          $('.shuffle-button').css({'display': 'inline-block'});
+        });
+      $('.shuffle-button').on('click', function(){
+      shuffleObject.insertShuffled(currentLevel);
+      });
+    }
+  }
 
   // ========== Game Codes Below This Point ===============//
   // Upon new game, instantiate a new GameRecord.
@@ -117,10 +126,6 @@ $(document).ready(function(){
     this.gameOneIQ = 'Kid';
     this.gameTwoIQ = 'Kid';
   }
-
-  // Global Variables
-  var game = new GameRecord();
-  var currentLevel = '#puzzle-set-1';
 
   //Timer
   var timeObject = {
@@ -286,14 +291,24 @@ $(document).ready(function(){
     }
   }
 
+  var gameEvents = {
+    listen: function(){
+      $('#play_button').on('click', levelObject.levelCheck());
 
-  $('#play_button').on('click', levelObject.levelCheck());
+      $('.reset-level').on('click', levelObject.reset);
 
-  $('.reset-level').on('click', levelObject.reset);
+      $('.time-start').on('click', gameMaster.startGame);
 
-  $('.time-start').on('click', gameMaster.startGame);
+      $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
+    }
+  }
 
-  $('#puzzle-set-1, #puzzle-set-2').on('sortupdate', levelObject.checkPuzzleComplete);
+  // Start listening to clicks on main design layout.
+  designEvents.listen();
+
+  // Start listening to clicks on start and shuffle buttons.
+  shuffleEventListeners.listen();
+
+  // Start listening to clicks on game elements.
+  gameEvents.listen();
 });
-
-
