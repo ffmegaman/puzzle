@@ -73,13 +73,13 @@ $(document).ready(function(){
     $('.upon-completion').fadeOut('slow');
   });
 // this is temporary
- $('#your-status').hover(function(){
-   $('.upon-completion').fadeIn(1080,function(){
-     $('.upon-completion').animate({
-       "display":"block"
-     });
-   });
- });
+ // $('#your-status').hover(function(){
+ //   $('.upon-completion').fadeIn(1080,function(){
+ //     $('.upon-completion').animate({
+ //       "display":"block"
+ //     });
+ //   });
+ // });
   // ========== Shuffle Codes Below this Point ===============//
 
   function shuffleArray(o){
@@ -183,6 +183,9 @@ $(document).ready(function(){
           $('#p2-time-stat').text(gameRecord.gameTwoTime);
           $('#p2-iq-stat').text(gameRecord.gameTwoIQ);
         }
+        if(currentLevel == '#puzzle-set-2'){
+          levelObject.complete();
+        }
         currentLevel = '#puzzle-set-2';
         levelObject.nextLevel();
         $('#average-time span').text(gameRecord.gameOneTime);
@@ -202,13 +205,19 @@ $(document).ready(function(){
   };
 
   var levelObject = {
+    complete: function(){
+     $('.upon-completion').fadeIn(1080,function(){
+       $('.upon-completion').animate({
+         "display":"block"
+       });
+     });
+    },
     nextLevel: function(){
       $('#puzzle-set-1').hide();
       $(currentLevel).show();
       $('.start-button').show();
       $('.shuffle-button').css({'display': 'none'});
     },
-
     checkPuzzleComplete: function(){
       var unsortedPieces = [];
       var originalPieces = [];
