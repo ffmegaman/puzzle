@@ -4,7 +4,6 @@
   .puzzle_nerds{
     font-size: 5em;
   }
-
 }
 /*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
 
@@ -12,40 +11,14 @@
 @media (max-width: 1100px){  /*TABLET*/
   .puzzle_nerds{
     font-size: 4.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #main-header{
-    height: 8.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
+    z-index: 1000;
   }
 
   #main_logo{
     font-size: 3.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
-  }
-
-  #puzzle-set-1{
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
-  }
-
-  #puzzle-set-2{
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #main-about-box{
@@ -56,28 +29,16 @@
     position: fixed;
     width: 80%;
     z-index: 1000;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #your-status{
     margin-top: -1.3em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .level-set{
     font-size: 1.5em;
     margin-left: 6em;
     margin-top: -0.9em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #about-trottier{
@@ -85,10 +46,6 @@
     margin-left: 11.8em;
     margin-top: -5em;
     width: 120px;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .info-us{
@@ -105,18 +62,10 @@
     height: 15em;
     margin-left: 3.4em;
     margin-top: 1em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .close-button{
     width: 20%;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .reset-level{
@@ -132,50 +81,26 @@
   #main_logo{
     font-size: 3em;
     margin-left: 0.6em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #main-header{
-    height: 15.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
+    z-index: 1000;
   }
 
   .puzzle_nerds{
     font-size: 3em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .el-menu{
     font-size: 0.9em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #play_button{
     width: 21.411765%;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #back-button{
     width: 21.411765%;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #main-about-box{
@@ -185,54 +110,26 @@
     position: fixed;
     width: 90%;
   /*  height: 31.9em;*/
-    z-index: 1000;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
+    z-index: -1;
   }
 
   #your-status{
     margin-top: -2em;
 /*    padding-left: 5em;*/
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #puzzle-set-2{
     margin-left: -2.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
-  }
-
-  .level-set{
-
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #puzzle-set-1{
     margin-left: -5.5em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #about-chino{
     float: right;
     height: 50px;
     width: 100px;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #messages{
@@ -240,25 +137,16 @@
     margin-top: 2.5em;
   }
 
-
   #about-phillip{
     float: left;
     height: 50px;
     width: 100px;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #about-trottier{
     height: 50px;
     margin-left: 95px;
     width: 100px;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   #main-about-box{
@@ -287,10 +175,6 @@
     width: 80%;
     height: 10em;
     margin-left: 1.3em;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;
   }
 
   .upon-completion > p{
@@ -299,10 +183,6 @@
 
   .close-button{
     width: 40%;
-    -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -o-transition: 1s ease;
-    transition: 1s ease;v
   }
 
   .reset-level{
